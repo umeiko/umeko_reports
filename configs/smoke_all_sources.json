@@ -1,0 +1,36 @@
+{
+  "experiment_name": "smoke_all_haidass_sources_2080ti",
+  "scientific_status": "pipeline_smoke_test_only",
+  "materialized_subdir": "materialized_smoke_all_sources",
+  "dataset": {
+    "min_document_tokens": 32,
+    "max_document_tokens": 8192,
+    "partition_modulus": 1000,
+    "dev_range": [0, 99],
+    "test_range": [100, 199],
+    "hash_salt": "haidass-iclr2027-smoke-partition-v1",
+    "sampling_salt": "haidass-iclr2027-source-shards-v1",
+    "sources": [
+      {"id": "ultrafineweb_en", "repository": "openbmb/Ultra-FineWeb", "revision": "02c85641e3d19a854be2e09139c25adaa9518063", "config": "default/en", "language": "en", "file_pattern": "data/ultrafineweb_en/*.parquet", "text_field": "content", "train_sequences": 32, "evaluation_source": true},
+      {"id": "ultrafineweb_zh", "repository": "openbmb/Ultra-FineWeb", "revision": "02c85641e3d19a854be2e09139c25adaa9518063", "config": "default/zh", "language": "zh", "file_pattern": "data/ultrafineweb_zh/*.parquet", "text_field": "content", "train_sequences": 64, "evaluation_source": true},
+      {"id": "dclm", "repository": "mlfoundations/dclm-baseline-1.0-parquet", "revision": "817d6752765f6a41261085171dd546b104f60626", "config": "baseline parquet", "language": "en", "file_pattern": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/*/processed_data/**/*.parquet", "text_field": "text", "train_sequences": 16},
+      {"id": "finemath_4plus", "repository": "HuggingFaceTB/finemath", "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594", "config": "finemath-4plus", "language": "en", "file_pattern": "finemath-4plus/*.parquet", "text_field": "text", "train_sequences": 16},
+      {"id": "l3_en_qa", "repository": "openbmb/Ultra-FineWeb-L3", "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f", "config": "Ultra-FineWeb-L3-en-QA-Synthetic", "language": "en", "file_pattern": "data/ultrafineweb_en_l3/qa/*.parquet", "text_field": "content", "train_sequences": 8},
+      {"id": "l3_en_multistyle", "repository": "openbmb/Ultra-FineWeb-L3", "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f", "config": "Ultra-FineWeb-L3-en-Multi-Style-Synthetic", "language": "en", "file_pattern": "data/ultrafineweb_en_l3/multi_style/*.parquet", "text_field": "content", "train_sequences": 8},
+      {"id": "l3_zh_qa", "repository": "openbmb/Ultra-FineWeb-L3", "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f", "config": "Ultra-FineWeb-L3-zh-QA-Synthetic", "language": "zh", "file_pattern": "data/ultrafineweb_zh_l3/qa/*.parquet", "text_field": "content", "train_sequences": 24},
+      {"id": "l3_zh_multistyle", "repository": "openbmb/Ultra-FineWeb-L3", "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f", "config": "Ultra-FineWeb-L3-zh-Multi-Style-Synthetic", "language": "zh", "file_pattern": "data/ultrafineweb_zh_l3/multi_style/*.parquet", "text_field": "content", "train_sequences": 40},
+      {"id": "cosmopedia_auto_math", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "auto_math_text", "language": "en", "file_pattern": "data/auto_math_text/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_khanacademy", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "khanacademy", "language": "en", "file_pattern": "data/khanacademy/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_openstax", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "openstax", "language": "en", "file_pattern": "data/openstax/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_stanford", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "stanford", "language": "en", "file_pattern": "data/stanford/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_stories", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "stories", "language": "en", "file_pattern": "data/stories/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_web_v1", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "web_samples_v1", "language": "en", "file_pattern": "data/web_samples_v1/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_web_v2", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "web_samples_v2", "language": "en", "file_pattern": "data/web_samples_v2/*.parquet", "text_field": "text", "train_sequences": 6},
+      {"id": "cosmopedia_wikihow", "repository": "HuggingFaceTB/cosmopedia", "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385", "config": "wikihow", "language": "en", "file_pattern": "data/wikihow/*.parquet", "text_field": "text", "train_sequences": 6}
+    ]
+  },
+  "tokenizer": {"repository": "DALabCommunity/Haidass1.5-143M", "revision": "d8a00d4943971088e6f0f4e08fb317dd5ba33ed1", "expected_vocabulary": 64000, "eos_token_id": 5},
+  "model": {"model_type": "qwen3", "expected_parameters": 43461504, "vocab_size": 64000, "hidden_size": 384, "intermediate_size": 1024, "num_hidden_layers": 12, "num_attention_heads": 6, "num_key_value_heads": 2, "head_dim": 64, "rope_theta": 100000, "rms_norm_eps": 1e-6, "tie_word_embeddings": true},
+  "local_data": {"context_length": 1024, "train_sequences_per_language": 128, "dev_sequences_per_language": 8, "test_sequences_per_language": 8},
+  "training": {"sequences_per_run": 64, "global_batch_sequences": 8, "micro_batch_sequences": 2, "gradient_accumulation_steps": 4, "optimizer_updates": 8, "tokens_per_run": 65536, "precision": "fp16", "optimizer": "AdamW", "betas": [0.9, 0.95], "epsilon": 1e-8, "weight_decay": 0.00001, "gradient_clip_norm": 2.0, "peak_learning_rate": 0.0015, "warmup_updates": 1, "evaluation_interval_updates": 4, "checkpoint_interval_updates": 4, "seeds": [2030], "conditions": ["iid_50"]}
+}

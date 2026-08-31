@@ -1,0 +1,27 @@
+[project]
+name = "haidass-local-bilingual-experiments"
+version = "0.1.0"
+description = "Auditable local P0 bilingual pretraining experiments for Haidass"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "datasets==5.0.1",
+  "huggingface-hub==0.36.2",
+  "matplotlib>=3.10,<3.11",
+  "numpy==2.5.2",
+  "pyarrow==25.0.1",
+  "protobuf>=5.29,<7",
+  "safetensors==0.8.0",
+  "sentencepiece>=0.2,<0.3",
+  "torch==2.11.0",
+  "tqdm>=4.67,<5",
+  "transformers==4.51.0",
+  "hf-xet>=1.6.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
