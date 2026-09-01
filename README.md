@@ -2,6 +2,18 @@
 
 这是 Haidass 论文项目的公开实验报告仓库。建议第一次阅读时直接打开：
 
+## 中英翻译 SFT 实验准备方案
+
+未来的 Haidass1.5-143M 简体中文↔英文翻译 SFT 调研、训练配置、数据登记表和冻结评测协议已经整理在 [`SFT/Translate/`](SFT/Translate/README.md)。
+
+- [`BEGINNER_EXPERIMENT_PREP_CN.md`](SFT/Translate/BEGINNER_EXPERIMENT_PREP_CN.md)：面向第一次做翻译模型的读者，解释数据内容、训练过程、指标和消融目的；
+- [`TECHNICAL_PLAN_CN.md`](SFT/Translate/TECHNICAL_PLAN_CN.md)：100 万句对 4090 先导实验与 800 万句对集群实验方案；
+- [`DATASET_REGISTRY.json`](SFT/Translate/DATASET_REGISTRY.json)：训练候选、评测隔离、许可证状态和污染风险；
+- [`EXPERIMENT_MATRIX.csv`](SFT/Translate/EXPERIMENT_MATRIX.csv)：13 组基线及消融；
+- [`configs/`](SFT/Translate/configs)：预注册训练配置。
+
+这些是尚待执行的实验计划，所有结果位置均明确标注为“待跑”，不包含虚构分数。
+
 ## [从零解释：为什么做、数据是什么、怎么训练验证、结果代表什么](reports/p0_scaled_100m_all_sources_2080ti/EXPERIMENT_REPORT_BEGINNER_CN.md)
 
 这份解释版不要求读者了解语言模型或统计学。它详细说明：

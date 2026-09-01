@@ -1,0 +1,15 @@
+id,priority,question,train_pairs,direction,method,loss,stage_b,seeds,primary_compare,decision
+A0,P0,原始基座本身有多少翻译能力,0,both,none,none,no,1,all SFT runs,必跑
+A1,P0,100万干净句对能否建立稳定双向翻译,1000000,both,full_ft,target_only,no,3,A0,主基线
+A2,P0,只对译文计算损失是否优于整段损失,1000000,both,full_ft,full_sequence,no,3,A1,关键方法消融
+A3a,P0,25万到100万的收益,250000,both,full_ft,target_only,no,3,A1,规模曲线
+A3b,P0,400万的边际收益,4000000,both,full_ft,target_only,no,1,A1/A3a,上集群
+A3c,P0,800万的边际收益,8000000,both,full_ft,target_only,no,1,A3b,上集群
+A4,P0,双向共享是否优于单向专家,1000000,en_to_zh,full_ft,target_only,no,3,A1 en_to_zh,方向迁移
+A5,P0,双向共享是否优于单向专家,1000000,zh_to_en,full_ft,target_only,no,3,A1 zh_to_en,方向迁移
+A6,P1,文档与指令第二阶段是否有效,8000000,both,full_ft,target_only,yes,1,A3c,文档和格式能力
+A7,P1,LoRA节省多少资源并损失多少质量,1000000,both,lora_r16_or_r32,target_only,no,3,A1,效率基线
+A8,P1,网页数据的增益是否来自数量而非噪声,1000000,both,full_ft,target_only,no,3,A1 clean with equal-token web mix,质量与数量
+A9,P1,greedy与beam4的质量速度取舍,1000000,both,decode_only,target_only,no,1,A1 greedy,只改解码
+A10,P2,繁体目标能否通过显式locale扩展,TBD,en_to_zh_Hant_TW,full_ft,target_only,yes,TBD,zh-Hans system,等待独立数据和评测设计
+

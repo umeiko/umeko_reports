@@ -1,0 +1,206 @@
+{
+  "registry_version": "0.1",
+  "frozen_on": "2026-09-01",
+  "policy": {
+    "training_requires_license_review": true,
+    "evaluation_data_is_denied_from_training": true,
+    "split_unit": "document_id_else_pair_id",
+    "towerblocks_default": "blocked"
+  },
+  "training_candidates": [
+    {
+      "id": "opus100_en_zh_train",
+      "content": "OPUS多来源汇总的英中平行句，适合通用骨架",
+      "url": "https://huggingface.co/datasets/Helsinki-NLP/opus-100",
+      "allowed_splits": ["train"],
+      "pilot_cap": 300000,
+      "main_cap": 700000,
+      "license_status": "verify_subcorpus_licenses",
+      "quality_risk": "medium",
+      "notes": "validation/test不得训练；追溯每个OPUS子来源许可"
+    },
+    {
+      "id": "news_commentary_18_1",
+      "content": "新闻和评论类人工/编辑平行文本",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 100000,
+      "main_cap": 250000,
+      "license_status": "verify_original",
+      "quality_risk": "low_to_medium"
+    },
+    {
+      "id": "ted2020_tedtalks",
+      "content": "TED演讲字幕和翻译，偏口语、演讲与教育内容",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 100000,
+      "main_cap": 350000,
+      "license_status": "verify_original",
+      "quality_risk": "medium",
+      "notes": "保留文档边界；检查字幕错位"
+    },
+    {
+      "id": "wikimatrix_wikititles",
+      "content": "维基百科自动对齐句和页面标题，主题广",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 200000,
+      "main_cap": 700000,
+      "license_status": "verify_original",
+      "quality_risk": "medium_to_high",
+      "notes": "必须做语义对齐过滤和跨来源去重"
+    },
+    {
+      "id": "multiun_unpc",
+      "content": "联合国正式、外交、法律和政策文档",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 150000,
+      "main_cap": 1000000,
+      "license_status": "verify_original",
+      "quality_risk": "medium",
+      "notes": "重复制式和领域偏置；严格设上限"
+    },
+    {
+      "id": "wikimedia_qed_elrc_hrw",
+      "content": "百科、教育演讲、公共健康和人权文本",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 50000,
+      "main_cap": 500000,
+      "license_status": "verify_each_source",
+      "quality_risk": "medium",
+      "notes": "逐来源建manifest，不能合并后失去溯源"
+    },
+    {
+      "id": "ccmatrix",
+      "content": "大规模网页挖掘英中平行句",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 0,
+      "main_cap": 1200000,
+      "license_status": "verify_original",
+      "quality_risk": "high",
+      "notes": "仅进入4M/8M；语言、对齐、模板、去重和污染过滤"
+    },
+    {
+      "id": "ccaligned",
+      "content": "网页级对齐文本，可能保留连续文档",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 0,
+      "main_cap": 800000,
+      "license_status": "verify_original",
+      "quality_risk": "high"
+    },
+    {
+      "id": "paracrawl_v9_bonus",
+      "content": "网页爬取并自动对齐的平行文本",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 0,
+      "main_cap": 1000000,
+      "license_status": "verify_original",
+      "quality_risk": "very_high",
+      "notes": "污染与错配风险最高；不得为凑数量降阈值"
+    },
+    {
+      "id": "opensubtitles_qed",
+      "content": "影视对话字幕与教育演讲文本",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 100000,
+      "main_cap": 700000,
+      "license_status": "verify_each_source",
+      "quality_risk": "high",
+      "notes": "短句、主语省略和错位；控制占比"
+    },
+    {
+      "id": "php_ubuntu_infopankki_tanzil_misc",
+      "content": "软件本地化、技术论坛、公共信息、宗教等混合领域",
+      "url": "https://www.statmt.org/wmt26/mtdata/mtdata.recipes.wmt26-constrained.yml",
+      "allowed_splits": ["train_corpus_only"],
+      "pilot_cap": 0,
+      "main_cap": 300000,
+      "license_status": "verify_each_source",
+      "quality_risk": "medium_to_high",
+      "notes": "每个子来源单列配额与许可，避免领域过采样"
+    },
+    {
+      "id": "derived_instruction_document_train",
+      "content": "仅从安全训练句对/真实训练文档派生的术语、格式、风格和上下文指令",
+      "url": "local_generation_pipeline",
+      "allowed_splits": ["train_only"],
+      "pilot_cap": 0,
+      "main_cap": 500000,
+      "license_status": "inherits_source_verify",
+      "quality_risk": "medium",
+      "notes": "不得从任何评测题或参考译文派生；人工抽检"
+    }
+  ],
+  "evaluation_only": [
+    {
+      "id": "flores_plus_dev_devtest",
+      "content": "多主题、多语言平行评测；英语与普通话简体",
+      "url": "https://huggingface.co/datasets/openlanguagedata/flores_plus",
+      "splits": {"dev": 997, "devtest": 1012},
+      "directions": ["en-zh-Hans", "zh-Hans-en"],
+      "license": "CC-BY-SA-4.0",
+      "training_policy": "blocked",
+      "notes": "官方明确不应用于训练"
+    },
+    {
+      "id": "wmt17_to_wmt26",
+      "content": "历年新闻/通用/多领域、文档和指令翻译测试",
+      "url": "https://www2.statmt.org/wmt26/translation-task.html",
+      "directions": ["year_specific"],
+      "license": "year_and_source_specific",
+      "training_policy": "blocked",
+      "notes": "WMT26中英相关为en->zh-Hans与en->zh-Hant-TW；当前仅离线评测"
+    },
+    {
+      "id": "wmt24pp_en_zh_cn",
+      "content": "约998条英文到中国简体中文的人译/后编辑，多领域且带文档ID",
+      "url": "https://huggingface.co/datasets/google/wmt24pp",
+      "directions": ["en-zh-Hans"],
+      "license": "Apache-2.0",
+      "training_policy": "blocked",
+      "notes": "移除is_bad_source=true；领域含news/social/speech/literary/canary"
+    },
+    {
+      "id": "ntrex128",
+      "content": "1997条英文新闻源到128种语言的参考翻译，带文档边界",
+      "url": "https://github.com/MicrosoftTranslator/NTREX",
+      "directions": ["en-zh", "reverse_use_must_be_labeled"],
+      "license": "CC-BY-SA-4.0",
+      "training_policy": "blocked"
+    },
+    {
+      "id": "tico19_zh_test",
+      "content": "医疗、公共卫生和疫情相关翻译压力测试",
+      "url": "https://tico-19.github.io/",
+      "directions": ["en-zh", "reverse_if_explicitly_constructed"],
+      "license": "verify_official_release",
+      "training_policy": "blocked_entire_dataset_until_splits_verified"
+    },
+    {
+      "id": "iwslt_offline_selected",
+      "content": "演讲/语音转写文本到译文的任务",
+      "url": "https://iwslt.org/2026/offline",
+      "directions": ["task_specific"],
+      "license": "year_and_task_specific",
+      "training_policy": "blocked_test",
+      "notes": "作为transcript translation压力测试，不能与纯文本主榜混报"
+    }
+  ],
+  "blocked_collections": [
+    {
+      "id": "towerblocks_v0_2",
+      "url": "https://huggingface.co/datasets/Unbabel/TowerBlocks-v0.2",
+      "reason": "混合包含WMT14-22、FLORES dev、NTREX等评测来源，整库训练会造成泄漏",
+      "exception": "仅在逐来源白名单、split过滤、近重复扫描和许可证审核全部完成后另行审批"
+    }
+  ]
+}
+

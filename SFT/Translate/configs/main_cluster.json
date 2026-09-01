@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "experiment_id": "translate_sft_main_8m_fullft_two_stage",
+  "status": "preregistered_not_run",
+  "model": {
+    "name_or_path": "DALabCommunity/Haidass1.5-143M",
+    "revision": "PIN_BEFORE_RUN",
+    "dtype": "bfloat16"
+  },
+  "task": {
+    "directions": ["en-zh-Hans", "zh-Hans-en"],
+    "direction_sampling": {"en-zh-Hans": 0.5, "zh-Hans-en": 0.5},
+    "unique_pair_count": 8000000,
+    "directional_example_count_expected": 16000000,
+    "target_only_loss": true
+  },
+  "data": {
+    "manifest": "data/manifests/main_8m.json",
+    "nested_subset_ids": ["250k", "1m", "4m", "8m"],
+    "internal_dev_unique_pairs": 10000,
+    "benchmark_denylist_required": true,
+    "license_gate_required": true,
+    "split_before_direction_expansion": true,
+    "dynamic_packing": true,
+    "sequence_boundary_required": true,
+    "shuffle_seed": 20260901
+  },
+  "stage_a_sentence_translation": {
+    "method": "full_parameter_sft",
+    "max_sequence_length": 2048,
+    "global_batch_target_non_padding_tokens": 131072,
+    "max_epochs": 1,
+    "learning_rate": 0.00003,
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.01,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.95,
+    "adam_epsilon": 1e-8,
+    "max_grad_norm": 1.0,
+    "evaluation_every_updates": 500,
+    "checkpoint_every_updates": 1000
+  },
+  "stage_b_document_and_instruction": {
+    "enabled": true,
+    "training_source": "safe_training_only",
+    "share_of_unique_pairs": "0.05_to_0.10",
+    "require_true_document_id_for_context": true,
+    "synthetic_instruction_types": ["glossary", "json", "html", "csv", "formal_informal", "style_preservation"],
+    "max_sequence_length": 4096,
+    "max_epochs": 0.25,
+    "learning_rate": 0.00001,
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03
+  },
+  "distributed": {
+    "strategy": "ddp_or_fsdp_as_measured",
+    "world_size": "SET_FROM_CLUSTER",
+    "micro_batch_size_per_gpu": "CALIBRATE",
+    "gradient_accumulation_steps": "CALCULATE_TO_TOKEN_TARGET",
+    "gradient_checkpointing": "ENABLE_ONLY_IF_NEEDED",
+    "flash_attention_if_available": true
+  },
+  "checkpoint_selection": {
+    "dataset": "internal_dev_10k",
+    "primary": "mean_bidirectional_comet",
+    "tie_break": "earlier_checkpoint",
+    "forbid_final_test_selection": true
+  },
+  "seeds": [42, 31415, 2027],
+  "note": "Effective batch is controlled by non-padding tokens, not only sequence count. Do a cluster calibration run before finalizing world size and accumulation."
+}
+

@@ -1,0 +1,13 @@
+data/
+runs/
+checkpoints/
+cache/
+wandb/
+*.safetensors
+*.pt
+*.bin
+*.arrow
+*.parquet
+__pycache__/
+.venv/
+

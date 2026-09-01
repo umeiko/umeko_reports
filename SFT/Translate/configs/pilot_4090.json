@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "experiment_id": "translate_sft_pilot_1m_fullft_targetonly",
+  "status": "preregistered_not_run",
+  "model": {
+    "name_or_path": "DALabCommunity/Haidass1.5-143M",
+    "revision": "PIN_BEFORE_RUN",
+    "max_position_embeddings": 4096,
+    "trust_remote_code": false,
+    "dtype": "bfloat16"
+  },
+  "task": {
+    "target_locales": ["en", "zh-Hans"],
+    "directions": ["en-zh-Hans", "zh-Hans-en"],
+    "direction_sampling": {"en-zh-Hans": 0.5, "zh-Hans-en": 0.5},
+    "unique_pair_count": 1000000,
+    "directional_example_count_expected": 2000000,
+    "target_only_loss": true,
+    "direct_translation_only": true,
+    "train_template_count": 4,
+    "evaluation_template_count": 1
+  },
+  "data": {
+    "manifest": "data/manifests/pilot_1m.json",
+    "internal_dev_unique_pairs": 10000,
+    "split_unit": "document_id_else_pair_id",
+    "split_before_direction_expansion": true,
+    "exact_and_near_dedup": true,
+    "benchmark_denylist_required": true,
+    "dynamic_packing": true,
+    "sequence_boundary_required": true,
+    "shuffle_seed": 20260901
+  },
+  "training": {
+    "method": "full_parameter_sft",
+    "max_sequence_length": 2048,
+    "micro_batch_size_per_gpu": 4,
+    "gradient_accumulation_steps": 16,
+    "logical_sequences_per_update_per_gpu": 64,
+    "max_epochs": 1,
+    "optimizer": "adamw",
+    "learning_rate": 0.00003,
+    "learning_rate_sweep": [0.00001, 0.00003, 0.0001],
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.01,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.95,
+    "adam_epsilon": 1e-8,
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": false,
+    "flash_attention_if_available": true,
+    "seed": 42,
+    "evaluation_every_updates": 500,
+    "checkpoint_every_updates": 500,
+    "keep_last_checkpoints": 3,
+    "smoke_calibration_updates": 1000
+  },
+  "checkpoint_selection": {
+    "dataset": "internal_dev_10k",
+    "primary": "mean_bidirectional_comet",
+    "guardrails": ["bleu_no_material_regression", "chrfpp_no_material_regression", "no_nan"],
+    "tie_break": "earlier_checkpoint",
+    "forbid_final_test_selection": true
+  },
+  "logging": {
+    "log_every_updates": 10,
+    "record_non_padding_tokens_per_second": true,
+    "record_peak_gpu_memory": true,
+    "record_data_wait_time": true,
+    "record_gradient_norm": true,
+    "save_run_manifest": true
+  },
+  "hardware_note": "Conservative starting point for one RTX 4090 24GB. Reduce micro-batch before changing scientific settings if OOM; record any change. Throughput and ETA must be measured, not assumed."
+}
+
