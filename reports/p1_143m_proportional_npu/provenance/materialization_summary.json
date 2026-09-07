@@ -1,0 +1,526 @@
+{
+  "status": "complete",
+  "scientific_status": "two_seed_143m_proportional_scaleup_of_p0_exploratory_not_confirmatory",
+  "config_path": "/mnt/models/CODE/mzy/umeko_reports/configs/p1_143m_proportional.json",
+  "config_sha256": "189570476e3278fddd362215ec56b0e53356c6c5e7575c9a912ae44cc6acb753",
+  "tokenizer_repository": "DALabCommunity/Haidass1.5-143M",
+  "tokenizer_revision": "d8a00d4943971088e6f0f4e08fb317dd5ba33ed1",
+  "tokenizer_vocabulary_sha256": "b6859908d6ea9dcb00f5e9ecc284564f6646232fe9fb8f57e65d29dc7ade54f0",
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Linux-6.8.0-107-generic-aarch64-with-glibc2.35",
+    "uv": "uv 0.11.7 (aarch64-unknown-linux-gnu)",
+    "torch": "2.11.0+cu130",
+    "cuda_runtime": "13.0",
+    "cuda_available": false,
+    "gpu": null,
+    "gpu_capability": null,
+    "gpu_memory_bytes": null
+  },
+  "languages": {
+    "en": {
+      "language": "en",
+      "context_length": 1024,
+      "filled_sequences": {
+        "train": 337920,
+        "dev": 256,
+        "test": 512
+      },
+      "materialized_tokens": {
+        "train": 346030080,
+        "dev": 262144,
+        "test": 524288
+      },
+      "source_vocabulary": {
+        "ultrafineweb_en": 0,
+        "ultrafineweb_zh": 1,
+        "dclm": 2,
+        "finemath_4plus": 3,
+        "l3_en_qa": 4,
+        "l3_en_multistyle": 5,
+        "l3_zh_qa": 6,
+        "l3_zh_multistyle": 7,
+        "cosmopedia_auto_math": 8,
+        "cosmopedia_khanacademy": 9,
+        "cosmopedia_openstax": 10,
+        "cosmopedia_stanford": 11,
+        "cosmopedia_stories": 12,
+        "cosmopedia_web_v1": 13,
+        "cosmopedia_web_v2": 14,
+        "cosmopedia_wikihow": 15
+      },
+      "files": {
+        "dev_bytes.npy": {
+          "sha256": "8e31dfc4dc473a1b944c74dff0e6f27f360f94605b57da4605fe3d74e8fb11bc",
+          "bytes": 1152
+        },
+        "dev_tokens.npy": {
+          "sha256": "e52dda1b08dd185a1c1c89adda9af5a9132e57a0d813aaf67d38c68b74ffe72b",
+          "bytes": 1048704
+        },
+        "test_bytes.npy": {
+          "sha256": "fb4fb81cce4531e579d53ade918f3704008ef87e25fc783f438a674dc42f0dcf",
+          "bytes": 2176
+        },
+        "test_tokens.npy": {
+          "sha256": "c65a533653f2101453bc793ef6ba39bf6a980f4044282de57380631638439659",
+          "bytes": 2097280
+        },
+        "train_sources.npy": {
+          "sha256": "84e17391723e114a08055844136372a07fccf63a8629be3313dac424d8786f35",
+          "bytes": 675968
+        },
+        "train_tokens.npy": {
+          "sha256": "d57162e35de7b98eaec08df3079580e42a58fa3e7e609c980a6d792b0e29931f",
+          "bytes": 1384120448
+        }
+      }
+    },
+    "zh": {
+      "language": "zh",
+      "context_length": 1024,
+      "filled_sequences": {
+        "train": 337920,
+        "dev": 256,
+        "test": 512
+      },
+      "materialized_tokens": {
+        "train": 346030080,
+        "dev": 262144,
+        "test": 524288
+      },
+      "source_vocabulary": {
+        "ultrafineweb_en": 0,
+        "ultrafineweb_zh": 1,
+        "dclm": 2,
+        "finemath_4plus": 3,
+        "l3_en_qa": 4,
+        "l3_en_multistyle": 5,
+        "l3_zh_qa": 6,
+        "l3_zh_multistyle": 7,
+        "cosmopedia_auto_math": 8,
+        "cosmopedia_khanacademy": 9,
+        "cosmopedia_openstax": 10,
+        "cosmopedia_stanford": 11,
+        "cosmopedia_stories": 12,
+        "cosmopedia_web_v1": 13,
+        "cosmopedia_web_v2": 14,
+        "cosmopedia_wikihow": 15
+      },
+      "files": {
+        "dev_bytes.npy": {
+          "sha256": "5531b0508355cbb17ff6f27f8b36fd2684ec4244fca576a0598aaf772de98bcb",
+          "bytes": 1152
+        },
+        "dev_tokens.npy": {
+          "sha256": "bff3c88286fd1d250f5e772717e8dabd06b776c639c6872fee95939897450450",
+          "bytes": 1048704
+        },
+        "test_bytes.npy": {
+          "sha256": "cddcd8ae13487285809b24738e0ec8862870f9f78fb5425f094476ffc32e3986",
+          "bytes": 2176
+        },
+        "test_tokens.npy": {
+          "sha256": "4cfd2ed8e4a7d9faefde17867342f3a7381c660c11f28a2fb017cc2e6ee3ee0e",
+          "bytes": 2097280
+        },
+        "train_sources.npy": {
+          "sha256": "259fa0a893aacec173ac490378534b3866dd39f71d2146e6ed1e60870727db61",
+          "bytes": 675968
+        },
+        "train_tokens.npy": {
+          "sha256": "dcb3c615994549e465074da0b4fed28a7f23bef768e4536eff36ccfff5ff829d",
+          "bytes": 1384120448
+        }
+      }
+    }
+  },
+  "sources": {
+    "ultrafineweb_en": {
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "config": "default/en",
+      "language": "en",
+      "text_field": "content",
+      "train_sequences": 101376,
+      "train_tokens": 103809024,
+      "evaluation_source": true,
+      "selected_files": [
+        "data/ultrafineweb_en/ultrafineweb-en-part-1795-of-2048.parquet",
+        "data/ultrafineweb_en/ultrafineweb-en-part-1000-of-2048.parquet",
+        "data/ultrafineweb_en/ultrafineweb-en-part-1632-of-2048.parquet",
+        "data/ultrafineweb_en/ultrafineweb-en-part-1141-of-2048.parquet"
+      ],
+      "manifest_sha256": "f90e9849b100e43c22d585e52a5c84b921cad2cf75b83a48682a61c489676418",
+      "counters": {
+        "rows_seen": 144476,
+        "accepted_documents": 116189,
+        "accepted_train_tokens": 103809527,
+        "length_filtered": 27392,
+        "accepted_test_tokens": 524451,
+        "accepted_dev_tokens": 262868,
+        "exact_duplicate": 608,
+        "unused_dev_after_quota": 266,
+        "unused_test_after_quota": 21
+      }
+    },
+    "ultrafineweb_zh": {
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "config": "default/zh",
+      "language": "zh",
+      "text_field": "content",
+      "train_sequences": 202752,
+      "train_tokens": 207618048,
+      "evaluation_source": true,
+      "selected_files": [
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-138-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-184-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-094-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-146-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-190-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-017-of-256.parquet"
+      ],
+      "manifest_sha256": "08d6302b8cd7d9c936f36d6d669fc499e880d6021f68c3706bef5bc174378956",
+      "counters": {
+        "rows_seen": 232251,
+        "accepted_documents": 206225,
+        "accepted_train_tokens": 207618324,
+        "length_filtered": 24484,
+        "accepted_test_tokens": 524574,
+        "accepted_dev_tokens": 263193,
+        "exact_duplicate": 136,
+        "unused_dev_after_quota": 798,
+        "unused_test_after_quota": 608
+      }
+    },
+    "dclm": {
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "config": "baseline parquet",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 54067,
+      "train_tokens": 55364608,
+      "evaluation_source": false,
+      "selected_files": [
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_5_of_10/shard_00000016_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_09_of_10/local-shard_9_of_10/shard_00000128_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_3_of_10/shard_00000177_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_0_of_10/shard_00000068_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_1_of_10/shard_00000267_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_10_of_10/local-shard_6_of_10/shard_00000199_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_01_of_10/local-shard_7_of_10/shard_00000140_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_0_of_10/shard_00000247_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_2_of_10/shard_00000066_processed.parquet"
+      ],
+      "manifest_sha256": "843e18b0ddebacfa85d6e440872f718056fbee85da12153c0fa4a8e2613e3d91",
+      "counters": {
+        "rows_seen": 52636,
+        "length_filtered": 7114,
+        "accepted_documents": 45516,
+        "accepted_train_tokens": 55366222,
+        "exact_duplicate": 6
+      }
+    },
+    "finemath_4plus": {
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "config": "finemath-4plus",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 54067,
+      "train_tokens": 55364608,
+      "evaluation_source": false,
+      "selected_files": [
+        "finemath-4plus/train-00043-of-00064.parquet",
+        "finemath-4plus/train-00011-of-00064.parquet",
+        "finemath-4plus/train-00029-of-00064.parquet",
+        "finemath-4plus/train-00038-of-00064.parquet",
+        "finemath-4plus/train-00050-of-00064.parquet",
+        "finemath-4plus/train-00030-of-00064.parquet"
+      ],
+      "manifest_sha256": "4bb7e47de5edb6e3855d6926e7638a9680d76978e178dc03edceb8d969520590",
+      "counters": {
+        "rows_seen": 42269,
+        "accepted_documents": 39921,
+        "accepted_train_tokens": 55366442,
+        "length_filtered": 2348
+      }
+    },
+    "l3_en_qa": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "config": "Ultra-FineWeb-L3-en-QA-Synthetic",
+      "language": "en",
+      "text_field": "content",
+      "train_sequences": 27034,
+      "train_tokens": 27682816,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/ultrafineweb_en_l3/qa/part-00504-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet",
+        "data/ultrafineweb_en_l3/qa/part-00394-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet"
+      ],
+      "manifest_sha256": "7affea12af9a7b10c83bcfed77bb54d56092daed45804e363f4461f7eb87ebbf",
+      "counters": {
+        "rows_seen": 30267,
+        "accepted_documents": 30267,
+        "accepted_train_tokens": 27683777
+      }
+    },
+    "l3_en_multistyle": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "config": "Ultra-FineWeb-L3-en-Multi-Style-Synthetic",
+      "language": "en",
+      "text_field": "content",
+      "train_sequences": 33792,
+      "train_tokens": 34603008,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/ultrafineweb_en_l3/multi_style/part-00427-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet",
+        "data/ultrafineweb_en_l3/multi_style/part-00086-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet"
+      ],
+      "manifest_sha256": "2e1d1447ff798aca65dd2822b87781d97718262afcc891d8dd4cd521d1b0740e",
+      "counters": {
+        "rows_seen": 70731,
+        "accepted_documents": 63201,
+        "accepted_train_tokens": 34603566,
+        "length_filtered": 7530
+      }
+    },
+    "l3_zh_qa": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "config": "Ultra-FineWeb-L3-zh-QA-Synthetic",
+      "language": "zh",
+      "text_field": "content",
+      "train_sequences": 50688,
+      "train_tokens": 51904512,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/ultrafineweb_zh_l3/qa/part-00078-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/qa/part-00291-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet"
+      ],
+      "manifest_sha256": "b5a8342e246567d443d1f5424986cccd16720851538af1b58c2bfc80cc9d9068",
+      "counters": {
+        "rows_seen": 50393,
+        "accepted_documents": 50330,
+        "accepted_train_tokens": 51905214,
+        "length_filtered": 63
+      }
+    },
+    "l3_zh_multistyle": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "config": "Ultra-FineWeb-L3-zh-Multi-Style-Synthetic",
+      "language": "zh",
+      "text_field": "content",
+      "train_sequences": 84480,
+      "train_tokens": 86507520,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/ultrafineweb_zh_l3/multi_style/part-00284-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/multi_style/part-00240-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/multi_style/part-00020-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/multi_style/part-00113-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet"
+      ],
+      "manifest_sha256": "6bc01de28616f0136cce73abd119db42a9c92be83dd3fa29908d6fd196301540",
+      "counters": {
+        "rows_seen": 173795,
+        "length_filtered": 15791,
+        "accepted_documents": 158002,
+        "accepted_train_tokens": 86507865,
+        "exact_duplicate": 2
+      }
+    },
+    "cosmopedia_auto_math": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "auto_math_text",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/auto_math_text/train-00014-of-00018.parquet",
+        "data/auto_math_text/train-00007-of-00018.parquet"
+      ],
+      "manifest_sha256": "208f69e54dbdf584378007f91bc88e46d1e17e15512df80281441040134edb30",
+      "counters": {
+        "rows_seen": 12175,
+        "accepted_documents": 12078,
+        "accepted_train_tokens": 8651369,
+        "length_filtered": 97
+      }
+    },
+    "cosmopedia_khanacademy": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "khanacademy",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/khanacademy/train-00000-of-00001.parquet"
+      ],
+      "manifest_sha256": "0f9afddfc0cf20afc65a12ce32167f7b26da537497e836569f8745304c359c36",
+      "counters": {
+        "rows_seen": 9022,
+        "accepted_documents": 8718,
+        "accepted_train_tokens": 8651293,
+        "length_filtered": 296,
+        "exact_duplicate": 8
+      }
+    },
+    "cosmopedia_openstax": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "openstax",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/openstax/train-00000-of-00002.parquet",
+        "data/openstax/train-00001-of-00002.parquet"
+      ],
+      "manifest_sha256": "af0d90f312ce529c307c13cc927f0f87f7438986be61a57faedf7d176e46de1f",
+      "counters": {
+        "rows_seen": 10435,
+        "accepted_documents": 10365,
+        "accepted_train_tokens": 8650865,
+        "length_filtered": 70
+      }
+    },
+    "cosmopedia_stanford": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "stanford",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/stanford/train-00004-of-00013.parquet",
+        "data/stanford/train-00005-of-00013.parquet"
+      ],
+      "manifest_sha256": "5c6f75db32e6ab4928c298cc72ab99b189c03f05beb234f4aa9d119dd7824ebb",
+      "counters": {
+        "rows_seen": 8937,
+        "accepted_documents": 8848,
+        "accepted_train_tokens": 8650808,
+        "length_filtered": 89
+      }
+    },
+    "cosmopedia_stories": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "stories",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/stories/train-00034-of-00043.parquet",
+        "data/stories/train-00035-of-00043.parquet"
+      ],
+      "manifest_sha256": "0483de57e2fe52bfb6079d6f533c528b77f100633a4fa6d3d20a1ae2eb389d7f",
+      "counters": {
+        "rows_seen": 14963,
+        "accepted_documents": 14898,
+        "accepted_train_tokens": 8651077,
+        "length_filtered": 65
+      }
+    },
+    "cosmopedia_web_v1": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "web_samples_v1",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/web_samples_v1/train-00130-of-00139.parquet",
+        "data/web_samples_v1/train-00017-of-00139.parquet"
+      ],
+      "manifest_sha256": "13e0d53128862add88a0e869cebea70b6063e7d9b0e5d0bfa515475d172a7477",
+      "counters": {
+        "rows_seen": 11082,
+        "accepted_documents": 10855,
+        "accepted_train_tokens": 8651159,
+        "length_filtered": 227
+      }
+    },
+    "cosmopedia_web_v2": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "web_samples_v2",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/web_samples_v2/train-00057-of-00118.parquet",
+        "data/web_samples_v2/train-00035-of-00118.parquet"
+      ],
+      "manifest_sha256": "8f52e0594932dd884de2de860857145fd84eea9933b8b6aaa2fa1283a3a800ac",
+      "counters": {
+        "rows_seen": 11410,
+        "accepted_documents": 11329,
+        "accepted_train_tokens": 8651195,
+        "length_filtered": 81
+      }
+    },
+    "cosmopedia_wikihow": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "config": "wikihow",
+      "language": "en",
+      "text_field": "text",
+      "train_sequences": 8448,
+      "train_tokens": 8650752,
+      "evaluation_source": false,
+      "selected_files": [
+        "data/wikihow/train-00000-of-00002.parquet",
+        "data/wikihow/train-00001-of-00002.parquet"
+      ],
+      "manifest_sha256": "6675720f501d303fbaf85d40a64244510eb01a380609766cdc7cac317754c9c4",
+      "counters": {
+        "rows_seen": 8915,
+        "accepted_documents": 8819,
+        "accepted_train_tokens": 8651611,
+        "length_filtered": 96
+      }
+    }
+  },
+  "source_vocabulary": {
+    "ultrafineweb_en": 0,
+    "ultrafineweb_zh": 1,
+    "dclm": 2,
+    "finemath_4plus": 3,
+    "l3_en_qa": 4,
+    "l3_en_multistyle": 5,
+    "l3_zh_qa": 6,
+    "l3_zh_multistyle": 7,
+    "cosmopedia_auto_math": 8,
+    "cosmopedia_khanacademy": 9,
+    "cosmopedia_openstax": 10,
+    "cosmopedia_stanford": 11,
+    "cosmopedia_stories": 12,
+    "cosmopedia_web_v1": 13,
+    "cosmopedia_web_v2": 14,
+    "cosmopedia_wikihow": 15
+  },
+  "unique_document_hashes": 882997,
+  "known_deviation_from_cluster_plan": "Local scaled pilot uses revision-and-salt-selected upstream shards and exact cross-source deduplication; formal P1/P2 additionally require MinHash deduplication. The Haidass model card does not disclose the original source mixture, stage boundaries, or exact source configs."
+}

@@ -1,0 +1,12 @@
+{
+  "2027": {
+    "sha256": "afd875b18df562d31e523a8c0669246ba55ce56d8363bc83a2dcb53bd5e348a3",
+    "hf_dir": "/mnt/models/CODE/mzy/bilingual_npu_cluster/training/init_hf_143m/init-s2027",
+    "parameter_count": 143071296
+  },
+  "2028": {
+    "sha256": "e06c86d0116e7229de9c1ad9cc171467ea5a3ff244e31d1744f233d00fac31ca",
+    "hf_dir": "/mnt/models/CODE/mzy/bilingual_npu_cluster/training/init_hf_143m/init-s2028",
+    "parameter_count": 143071296
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "sequences_per_run": 323584,
+  "context": 1024,
+  "runs": {
+    "en_only-s2027": {
+      "schedule_sha256": "94d15082f6fb4e74cf4ae8c37f89c19bc6e6ac8eddb83f5a6c2bc2f89bf6b570",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 97075,
+        "ultrafineweb_zh": 0,
+        "dclm": 51773,
+        "finemath_4plus": 51773,
+        "l3_en_qa": 25887,
+        "l3_en_multistyle": 32358,
+        "l3_zh_qa": 0,
+        "l3_zh_multistyle": 0,
+        "cosmopedia_auto_math": 8090,
+        "cosmopedia_khanacademy": 8090,
+        "cosmopedia_openstax": 8090,
+        "cosmopedia_stanford": 8090,
+        "cosmopedia_stories": 8090,
+        "cosmopedia_web_v1": 8090,
+        "cosmopedia_web_v2": 8089,
+        "cosmopedia_wikihow": 8089
+      }
+    },
+    "zh_only-s2027": {
+      "schedule_sha256": "883cc28268222c31f009d120e63bed68f3e9d26e0f9b71b5c31fee8f7c0d1d98",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 0,
+        "ultrafineweb_zh": 194150,
+        "dclm": 0,
+        "finemath_4plus": 0,
+        "l3_en_qa": 0,
+        "l3_en_multistyle": 0,
+        "l3_zh_qa": 48538,
+        "l3_zh_multistyle": 80896,
+        "cosmopedia_auto_math": 0,
+        "cosmopedia_khanacademy": 0,
+        "cosmopedia_openstax": 0,
+        "cosmopedia_stanford": 0,
+        "cosmopedia_stories": 0,
+        "cosmopedia_web_v1": 0,
+        "cosmopedia_web_v2": 0,
+        "cosmopedia_wikihow": 0
+      }
+    },
+    "iid_50-s2027": {
+      "schedule_sha256": "77136612e1917c7f8ed273348cc7f08c3b0f11b8cd6454a3c1ad784d09b571ec",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "en_first-s2027": {
+      "schedule_sha256": "a32bbdd58299b22f0fb9ae93bf5cd9a6c64c3196b0ece92970d61f13a49333e0",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "zh_first-s2027": {
+      "schedule_sha256": "d1c37a6a5d398b31eef22f6594f394dcdd0cca0067a2c63a85ceaf7b70992d88",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "alternating-s2027": {
+      "schedule_sha256": "e40eecdc53b1ed2e17dcc269e303f009ba348515058df96fffc217b41be21d63",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "en_only-s2028": {
+      "schedule_sha256": "c7382cd666126b4d5fbb0afcc9accc9b94f1180c156423054ea81b189d0802dc",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 97075,
+        "ultrafineweb_zh": 0,
+        "dclm": 51773,
+        "finemath_4plus": 51773,
+        "l3_en_qa": 25887,
+        "l3_en_multistyle": 32358,
+        "l3_zh_qa": 0,
+        "l3_zh_multistyle": 0,
+        "cosmopedia_auto_math": 8090,
+        "cosmopedia_khanacademy": 8090,
+        "cosmopedia_openstax": 8090,
+        "cosmopedia_stanford": 8090,
+        "cosmopedia_stories": 8090,
+        "cosmopedia_web_v1": 8090,
+        "cosmopedia_web_v2": 8089,
+        "cosmopedia_wikihow": 8089
+      }
+    },
+    "zh_only-s2028": {
+      "schedule_sha256": "1e64e8e9e2b118bcf1575cbd381a1c0b91251820bca2f8b1f4e63093f95a1ae3",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 0,
+        "ultrafineweb_zh": 194150,
+        "dclm": 0,
+        "finemath_4plus": 0,
+        "l3_en_qa": 0,
+        "l3_en_multistyle": 0,
+        "l3_zh_qa": 48538,
+        "l3_zh_multistyle": 80896,
+        "cosmopedia_auto_math": 0,
+        "cosmopedia_khanacademy": 0,
+        "cosmopedia_openstax": 0,
+        "cosmopedia_stanford": 0,
+        "cosmopedia_stories": 0,
+        "cosmopedia_web_v1": 0,
+        "cosmopedia_web_v2": 0,
+        "cosmopedia_wikihow": 0
+      }
+    },
+    "iid_50-s2028": {
+      "schedule_sha256": "0dbed087e630ae77b50a00f758f2cc50fc85f26b1a4680a4341c2ad0b5089e25",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "en_first-s2028": {
+      "schedule_sha256": "66d2f4795d8d8cd3d1361a757fc72e94ced11695fd4abbf5d1672f3d5e022014",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "zh_first-s2028": {
+      "schedule_sha256": "469e706f84634a7f7c9ff2407b5451c3a09ae7b3ea2ca42130dc89452b3fce58",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    },
+    "alternating-s2028": {
+      "schedule_sha256": "4313bfc90250d27d706aa8fef0f94f438120837062e23901b6498fa0f7d23134",
+      "source_sequence_counts": {
+        "ultrafineweb_en": 48537,
+        "ultrafineweb_zh": 97075,
+        "dclm": 25887,
+        "finemath_4plus": 25886,
+        "l3_en_qa": 12943,
+        "l3_en_multistyle": 16179,
+        "l3_zh_qa": 24269,
+        "l3_zh_multistyle": 40448,
+        "cosmopedia_auto_math": 4045,
+        "cosmopedia_khanacademy": 4045,
+        "cosmopedia_openstax": 4045,
+        "cosmopedia_stanford": 4045,
+        "cosmopedia_stories": 4045,
+        "cosmopedia_web_v1": 4045,
+        "cosmopedia_web_v2": 4045,
+        "cosmopedia_wikihow": 4045
+      }
+    }
+  }
+}

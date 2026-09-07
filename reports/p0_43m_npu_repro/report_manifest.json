@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "complete_run_ids": [
+    "p0_43m_npu_repro-en_only-s2027",
+    "p0_43m_npu_repro-en_only-s2028",
+    "p0_43m_npu_repro-zh_only-s2027",
+    "p0_43m_npu_repro-zh_only-s2028",
+    "p0_43m_npu_repro-iid_50-s2027",
+    "p0_43m_npu_repro-iid_50-s2028",
+    "p0_43m_npu_repro-en_first-s2027",
+    "p0_43m_npu_repro-en_first-s2028",
+    "p0_43m_npu_repro-zh_first-s2027",
+    "p0_43m_npu_repro-zh_first-s2028",
+    "p0_43m_npu_repro-alternating-s2027",
+    "p0_43m_npu_repro-alternating-s2028"
+  ],
+  "incomplete_run_ids": [],
+  "tables": {
+    "comparison.json": "2e977b3c0cf3a35ed8978bee7a7bd4e089f3687c817a7f173bdcf9574378b2c3",
+    "comparison.md": "05bebe7b603910c516013e801169f64bdb4b2f4dd748c4cf33d5a751513432cc",
+    "final_metrics_aggregate.csv": "179fdbbfc0c7b48446df495c6084f24a84cd7b310b14529bd5c62f4e935138b9",
+    "final_metrics_per_seed.csv": "e806d05fe4483c40dba118eddd0e1e62422244dcb7f813adca154f9e1bba0681"
+  },
+  "reports": {
+    "EXPERIMENT_REPORT_CN.md": "14a1f0d5d8fc324fe912693a5a0809ffb030b62e21ea0652619ea11d3cd48de0",
+    "TRAINING_REPRO_BEGINNER_GUIDE_CN.md": "8a56abb5e48a230a4c60fffc62e05192929319de6c4c003c812daa9b9e795f56"
+  }
+}

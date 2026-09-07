@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "complete_run_ids": [
+    "p1_143m_proportional_npu-en_only-s2027",
+    "p1_143m_proportional_npu-en_only-s2028",
+    "p1_143m_proportional_npu-zh_only-s2027",
+    "p1_143m_proportional_npu-zh_only-s2028",
+    "p1_143m_proportional_npu-iid_50-s2027",
+    "p1_143m_proportional_npu-iid_50-s2028",
+    "p1_143m_proportional_npu-en_first-s2027",
+    "p1_143m_proportional_npu-en_first-s2028",
+    "p1_143m_proportional_npu-zh_first-s2027",
+    "p1_143m_proportional_npu-zh_first-s2028",
+    "p1_143m_proportional_npu-alternating-s2027",
+    "p1_143m_proportional_npu-alternating-s2028"
+  ],
+  "incomplete_run_ids": [],
+  "tables": {
+    "comparison_143m.json": "7c4a0bc9b59d80a2e257cf663d25bb5a00e745d01ca20a49e899c445a091ddce",
+    "comparison_143m.md": "c91995daf8d7e78e65e9879536879c31ed78e87e40cf48ea35373e8e881f8068",
+    "final_metrics_aggregate.csv": "2a1804faddc4d505235c528e4e8aa971f624bbea5ede83dc8b490751f2dec8bb",
+    "final_metrics_per_seed.csv": "c79b7014e3271e65b6389389f25cdf0e309e582265a3e9639ef453d8409f44e3"
+  },
+  "figures": {
+    "fig_dev_en.pdf": "d490487521ba4bbf52d22e78b5949a7328a7b9ce2c3b1bd2efb62245980a5056",
+    "fig_dev_en.png": "d6245fef9b12495b3d049ecb4f526329183a1f751dcdd1b846623a664f3c8e90",
+    "fig_dev_zh.pdf": "6946cbae6ccc826b33b58c2792a411390513cbb3091280cb82a7a94fcf6c65d7",
+    "fig_dev_zh.png": "2212156906f4c748c3d2ccf3b11e114df43722eacd51f2182786014198e3a53d",
+    "fig_forgetting.pdf": "73ef55740b6c4b28e3756501178ed0c5c8d904d64b4282adcf5e63b6bd38c570",
+    "fig_forgetting.png": "1a89eb6a3e3f96df3f614540fb5a91528e7b3816e6fcec4db7148168d2b39655",
+    "fig_test_bar.pdf": "2a2e08ff359e1aba6a2f3808725d2f2dc491b87b9dd01c50c953f37a66b526bc",
+    "fig_test_bar.png": "4b0cf3d188ecb031703622367aea1c173800ec4979e7d57410936cb1d23c2480"
+  },
+  "reports": {
+    "EXPERIMENT_REPORT_BEGINNER_CN.md": "4397b7b5327b7021b29bb46b321a95894547b39ad1a0d494ffcc637cd8e1d23b",
+    "EXPERIMENT_REPORT_CN.md": "bdfcc744d3f4eb1b2aa66f051dfee3d75524d532cf6eabdb5222993d9500791e"
+  }
+}

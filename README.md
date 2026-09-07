@@ -40,6 +40,23 @@
 
 ![语言顺序对中英文验证 BPB 的影响](reports/p0_scaled_100m_all_sources_2080ti/figures/order_effect_bpb_curves.png)
 
+## 143M NPU 扩展实验（P1）
+
+在 8 卡昇腾 NPU 集群上，先用 MindSpeed-LLM 完整复现了 43M 初探（[复现报告](reports/p0_43m_npu_repro/EXPERIMENT_REPORT_CN.md)：30 项对照指标全部在 ±0.052 BPB 以内），随后把实验等比例放大到 Haidass1.5-143M 本体规模（每 run 3.31 亿 tokens，保持 2.316 token/参数），见 [P1 报告目录](reports/p1_143m_proportional_npu/)。
+
+一句话结论：**43M 的全部定性结论在 143M 上保持**——条件排序不变、IID 仍最优、块交替相对 IID 的代价稳定在 +4.6%；而顺序造成的遗忘随规模加深（英文遗忘 0.308→0.457，中文遗忘 0.827→1.091），中文更怕忘的不对称性保持（约 2.4 倍）。
+
+| 双语条件 | 43M NPU 平均测试 BPB | 143M NPU 平均测试 BPB |
+|---|---:|---:|
+| IID 50:50 随机混合 | 1.5962 ± 0.0091 | **1.3403 ± 0.0090** |
+| 八块交替 | 1.6690 ± 0.0037 | 1.4024 ± 0.0011 |
+| 先英文后中文 | 1.7703 ± 0.0009 | 1.5783 ± 0.0050 |
+| 先中文后英文 | 2.0200 ± 0.0080 | 1.8820 ± 0.0072 |
+
+![143M 与 43M 的最终成绩与遗忘量对比](reports/p1_143m_proportional_npu/figures/fig_test_bar.png)
+
+P1 仍是探索性实验（2 种子、上下文 1024、无下游评测）；确认性结论以 [`FUTURE_EXPERIMENT_PLAN.md`](FUTURE_EXPERIMENT_PLAN.md) 中的 P2 为准。
+
 ## 实验边界
 
 这不是 Haidass1.5-143M 本体的重训结果，而是 43.46M 参数代理模型的本地先导实验。它覆盖 Haidass 模型卡列出的全部五个数据仓库和 16 个 source/configuration 流，但使用固定 shard 组成的受控配比，不声称复刻未公开的 400B-token 原始混合方案。
@@ -55,6 +72,10 @@
 - [`p0_scaled_100m_all_sources_2080ti_run_audit.json`](reports/p0_scaled_100m_all_sources_2080ti_run_audit.json)：12 个 run 的完整性审计；
 - [`HAIDASS_DATASET_INVENTORY_CN.md`](reports/HAIDASS_DATASET_INVENTORY_CN.md)：上游数据规模、配置、revision、许可证与本地覆盖清单；
 - [`p0_scaled_100m.json`](configs/p0_scaled_100m.json)：完整实验配置；
-- [`scripts/`](scripts)：下载固定 shard、物化数据、训练、审计和生成报告的脚本。
+- [`p1_143m_proportional.json`](configs/p1_143m_proportional.json)：143M 等比例放大实验配置；
+- [`reports/p0_43m_npu_repro/`](reports/p0_43m_npu_repro)：43M 初探的 NPU/MindSpeed 复现报告、对照表与集群复现指南；
+- [`reports/p1_143m_proportional_npu/`](reports/p1_143m_proportional_npu)：143M 扩展实验的技术版与小白版报告、图、CSV 表、数据/顺序/初始化哈希清单；
+- [`scripts/`](scripts)：下载固定 shard、物化数据、训练、审计和生成报告的脚本；
+- [`scripts/npu/`](scripts/npu)：NPU 集群上 P0 复现与 P1 扩展使用的训练/评测/汇总脚本（过程存档，环境相关）。
 
 原始 Parquet、物化数组、模型 checkpoint 和逐步训练日志体积较大，不存放在 GitHub。仓库保留固定 revision、文件路径、数据配比、模型/日志哈希和报告 manifest，便于审阅实验设计与结果来源。
