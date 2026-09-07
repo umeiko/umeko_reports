@@ -76,6 +76,8 @@ P1 仍是探索性实验（2 种子、上下文 1024、无下游评测）；确�
 - [`reports/p0_43m_npu_repro/`](reports/p0_43m_npu_repro)：43M 初探的 NPU/MindSpeed 复现报告、对照表与集群复现指南；
 - [`reports/p1_143m_proportional_npu/`](reports/p1_143m_proportional_npu)：143M 扩展实验的技术版与小白版报告、图、CSV 表、数据/顺序/初始化哈希清单；
 - [`scripts/`](scripts)：下载固定 shard、物化数据、训练、审计和生成报告的脚本；
-- [`scripts/npu/`](scripts/npu)：NPU 集群上 P0 复现与 P1 扩展使用的训练/评测/汇总脚本（过程存档，环境相关）。
+- [`scripts/npu/`](scripts/npu)：NPU 集群上 P0 复现与 P1 扩展使用的训练/评测/汇总脚本（过程存档，环境相关）；
+- [`manifests/`](manifests)：上游 shard 选择与逐文件 sha256 清单、token 产出估计、基础模型 Haidass1.5-143M 的权重/分词器哈希；
+- [`NPU_CLUSTER_OPERATIONS_CN.md`](reports/NPU_CLUSTER_OPERATIONS_CN.md)：昇腾集群实操手册——环境、网络镜像、数据/训练/评测流水线、坑清单与吞吐显存参考数字，供其它服务器复用。
 
 原始 Parquet、物化数组、模型 checkpoint 和逐步训练日志体积较大，不存放在 GitHub。仓库保留固定 revision、文件路径、数据配比、模型/日志哈希和报告 manifest，便于审阅实验设计与结果来源。

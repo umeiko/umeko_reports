@@ -1,0 +1,347 @@
+{
+  "sampling_salt": "haidass-iclr2027-source-shards-v1",
+  "safety_factor": 1.5,
+  "quota_basis": "FUTURE_EXPERIMENT_PLAN.md section 2.1, 3.20B tokens per language final pool",
+  "sources": [
+    {
+      "source_id": "ultrafineweb_en",
+      "language": "en",
+      "quota_M": 960,
+      "est_usable_per_shard_M": 422.4,
+      "selected_shards": 4,
+      "available_shards": 2048,
+      "selected_GiB": 4.84,
+      "est_selected_usable_M": 1689.5,
+      "coverage_vs_quota": 1.76,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "language": "zh",
+      "quota_M": 1920,
+      "est_usable_per_shard_M": 484.1,
+      "selected_shards": 6,
+      "available_shards": 256,
+      "selected_GiB": 7.08,
+      "est_selected_usable_M": 2904.8,
+      "coverage_vs_quota": 1.51,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "dclm",
+      "language": "en",
+      "quota_M": 512,
+      "est_usable_per_shard_M": 89.5,
+      "selected_shards": 9,
+      "available_shards": 27938,
+      "selected_GiB": 2.22,
+      "est_selected_usable_M": 805.8,
+      "coverage_vs_quota": 1.57,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "finemath_4plus",
+      "language": "en",
+      "quota_M": 512,
+      "est_usable_per_shard_M": 137.3,
+      "selected_shards": 6,
+      "available_shards": 64,
+      "selected_GiB": 1.6,
+      "est_selected_usable_M": 824.1,
+      "coverage_vs_quota": 1.61,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "l3_en_qa",
+      "language": "en",
+      "quota_M": 256,
+      "est_usable_per_shard_M": 475.4,
+      "selected_shards": 2,
+      "available_shards": 616,
+      "selected_GiB": 2.01,
+      "est_selected_usable_M": 950.8,
+      "coverage_vs_quota": 3.71,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "l3_en_multistyle",
+      "language": "en",
+      "quota_M": 320,
+      "est_usable_per_shard_M": 352.0,
+      "selected_shards": 2,
+      "available_shards": 552,
+      "selected_GiB": 2.01,
+      "est_selected_usable_M": 704.0,
+      "coverage_vs_quota": 2.2,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "l3_zh_qa",
+      "language": "zh",
+      "quota_M": 480,
+      "est_usable_per_shard_M": 515.0,
+      "selected_shards": 2,
+      "available_shards": 310,
+      "selected_GiB": 2.0,
+      "est_selected_usable_M": 1030.0,
+      "coverage_vs_quota": 2.15,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "l3_zh_multistyle",
+      "language": "zh",
+      "quota_M": 800,
+      "est_usable_per_shard_M": 346.0,
+      "selected_shards": 4,
+      "available_shards": 286,
+      "selected_GiB": 4.01,
+      "est_selected_usable_M": 1384.2,
+      "coverage_vs_quota": 1.73,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_auto_math",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 76.8,
+      "selected_shards": 2,
+      "available_shards": 18,
+      "selected_GiB": 0.46,
+      "est_selected_usable_M": 153.7,
+      "coverage_vs_quota": 1.92,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_khanacademy",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 23.0,
+      "selected_shards": 1,
+      "available_shards": 1,
+      "selected_GiB": 0.05,
+      "est_selected_usable_M": 23.0,
+      "coverage_vs_quota": 0.29,
+      "insufficient_even_if_full_config": true
+    },
+    {
+      "source_id": "cosmopedia_openstax",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 52.4,
+      "selected_shards": 2,
+      "available_shards": 2,
+      "selected_GiB": 0.32,
+      "est_selected_usable_M": 104.7,
+      "coverage_vs_quota": 1.31,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_stanford",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 76.0,
+      "selected_shards": 2,
+      "available_shards": 13,
+      "selected_GiB": 0.47,
+      "est_selected_usable_M": 152.0,
+      "coverage_vs_quota": 1.9,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_stories",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 67.0,
+      "selected_shards": 2,
+      "available_shards": 43,
+      "selected_GiB": 0.52,
+      "est_selected_usable_M": 133.9,
+      "coverage_vs_quota": 1.67,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_web_v1",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 69.7,
+      "selected_shards": 2,
+      "available_shards": 139,
+      "selected_GiB": 0.52,
+      "est_selected_usable_M": 139.4,
+      "coverage_vs_quota": 1.74,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_web_v2",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 66.4,
+      "selected_shards": 2,
+      "available_shards": 118,
+      "selected_GiB": 0.52,
+      "est_selected_usable_M": 132.8,
+      "coverage_vs_quota": 1.66,
+      "insufficient_even_if_full_config": false
+    },
+    {
+      "source_id": "cosmopedia_wikihow",
+      "language": "en",
+      "quota_M": 80,
+      "est_usable_per_shard_M": 86.7,
+      "selected_shards": 2,
+      "available_shards": 2,
+      "selected_GiB": 0.47,
+      "est_selected_usable_M": 173.4,
+      "coverage_vs_quota": 2.17,
+      "insufficient_even_if_full_config": false
+    }
+  ],
+  "selection": {
+    "ultrafineweb_en": {
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "files": [
+        "data/ultrafineweb_en/ultrafineweb-en-part-1795-of-2048.parquet",
+        "data/ultrafineweb_en/ultrafineweb-en-part-1000-of-2048.parquet",
+        "data/ultrafineweb_en/ultrafineweb-en-part-1632-of-2048.parquet",
+        "data/ultrafineweb_en/ultrafineweb-en-part-1141-of-2048.parquet"
+      ]
+    },
+    "ultrafineweb_zh": {
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "files": [
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-138-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-184-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-094-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-146-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-190-of-256.parquet",
+        "data/ultrafineweb_zh/ultrafineweb-zh-part-017-of-256.parquet"
+      ]
+    },
+    "dclm": {
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "files": [
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_5_of_10/shard_00000016_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_09_of_10/local-shard_9_of_10/shard_00000128_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_3_of_10/shard_00000177_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_0_of_10/shard_00000068_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_1_of_10/shard_00000267_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_10_of_10/local-shard_6_of_10/shard_00000199_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_01_of_10/local-shard_7_of_10/shard_00000140_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_0_of_10/shard_00000247_processed.parquet",
+        "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_2_of_10/shard_00000066_processed.parquet"
+      ]
+    },
+    "finemath_4plus": {
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "files": [
+        "finemath-4plus/train-00043-of-00064.parquet",
+        "finemath-4plus/train-00011-of-00064.parquet",
+        "finemath-4plus/train-00029-of-00064.parquet",
+        "finemath-4plus/train-00038-of-00064.parquet",
+        "finemath-4plus/train-00050-of-00064.parquet",
+        "finemath-4plus/train-00030-of-00064.parquet"
+      ]
+    },
+    "l3_en_qa": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "files": [
+        "data/ultrafineweb_en_l3/qa/part-00504-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet",
+        "data/ultrafineweb_en_l3/qa/part-00394-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet"
+      ]
+    },
+    "l3_en_multistyle": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "files": [
+        "data/ultrafineweb_en_l3/multi_style/part-00427-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet",
+        "data/ultrafineweb_en_l3/multi_style/part-00086-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet"
+      ]
+    },
+    "l3_zh_qa": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "files": [
+        "data/ultrafineweb_zh_l3/qa/part-00078-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/qa/part-00291-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet"
+      ]
+    },
+    "l3_zh_multistyle": {
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "files": [
+        "data/ultrafineweb_zh_l3/multi_style/part-00284-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/multi_style/part-00240-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/multi_style/part-00020-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+        "data/ultrafineweb_zh_l3/multi_style/part-00113-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet"
+      ]
+    },
+    "cosmopedia_auto_math": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/auto_math_text/train-00014-of-00018.parquet",
+        "data/auto_math_text/train-00007-of-00018.parquet"
+      ]
+    },
+    "cosmopedia_khanacademy": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/khanacademy/train-00000-of-00001.parquet"
+      ]
+    },
+    "cosmopedia_openstax": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/openstax/train-00000-of-00002.parquet",
+        "data/openstax/train-00001-of-00002.parquet"
+      ]
+    },
+    "cosmopedia_stanford": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/stanford/train-00004-of-00013.parquet",
+        "data/stanford/train-00005-of-00013.parquet"
+      ]
+    },
+    "cosmopedia_stories": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/stories/train-00034-of-00043.parquet",
+        "data/stories/train-00035-of-00043.parquet"
+      ]
+    },
+    "cosmopedia_web_v1": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/web_samples_v1/train-00130-of-00139.parquet",
+        "data/web_samples_v1/train-00017-of-00139.parquet"
+      ]
+    },
+    "cosmopedia_web_v2": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/web_samples_v2/train-00057-of-00118.parquet",
+        "data/web_samples_v2/train-00035-of-00118.parquet"
+      ]
+    },
+    "cosmopedia_wikihow": {
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "files": [
+        "data/wikihow/train-00000-of-00002.parquet",
+        "data/wikihow/train-00001-of-00002.parquet"
+      ]
+    }
+  }
+}

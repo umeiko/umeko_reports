@@ -1,0 +1,459 @@
+{
+  "status": "complete",
+  "files": [
+    {
+      "source_id": "finemath_4plus",
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "filename": "finemath-4plus/train-00043-of-00064.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/finemath_4plus/finemath-4plus/train-00043-of-00064.parquet",
+      "bytes": 286461543,
+      "sha256": "d6e5706cc53f79015065308877cedf33e82c17197cbf1be0b937c3a47270d391"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_5_of_10/shard_00000016_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_5_of_10/shard_00000016_processed.parquet",
+      "bytes": 203984508,
+      "sha256": "c388713559c8a15898b8b18e09d55b176f814ec175bdd429dcf7eacc1b0915c0"
+    },
+    {
+      "source_id": "l3_en_qa",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_en_l3/qa/part-00504-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_en_qa/data/ultrafineweb_en_l3/qa/part-00504-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet",
+      "bytes": 1076811885,
+      "sha256": "e3e6380dc73a83003658b952cfb7d50a62c1a615cb39e4a6005fa5580f70e994"
+    },
+    {
+      "source_id": "l3_en_multistyle",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_en_l3/multi_style/part-00427-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_en_multistyle/data/ultrafineweb_en_l3/multi_style/part-00427-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet",
+      "bytes": 1076791655,
+      "sha256": "8317d93ddf0f10325851535e1a45c19db42c0e5c91956413706e5e1a72a4b9d9"
+    },
+    {
+      "source_id": "cosmopedia_khanacademy",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/khanacademy/train-00000-of-00001.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_khanacademy/data/khanacademy/train-00000-of-00001.parquet",
+      "bytes": 49139761,
+      "sha256": "193141996fe9609c8fd98e984991c554007c4167014f4c99b7e4e1f10013152c"
+    },
+    {
+      "source_id": "l3_zh_qa",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_zh_l3/qa/part-00078-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_zh_qa/data/ultrafineweb_zh_l3/qa/part-00078-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet",
+      "bytes": 1074388094,
+      "sha256": "b599453b0117db207719ebbf923d8d9d211e5299ad0f8c560d4fd91f3ab5f920"
+    },
+    {
+      "source_id": "cosmopedia_auto_math",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/auto_math_text/train-00014-of-00018.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_auto_math/data/auto_math_text/train-00014-of-00018.parquet",
+      "bytes": 247861808,
+      "sha256": "0831479cf01730cbf463f235e4c177142d0f75b84287fbb8655645975499a28b"
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_zh/ultrafineweb-zh-part-138-of-256.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_zh/data/ultrafineweb_zh/ultrafineweb-zh-part-138-of-256.parquet",
+      "bytes": 1267857506,
+      "sha256": "1acb54d11c110979f921c682b9cdab347e05c7bece90ff23cc5f6d344adf7fb3"
+    },
+    {
+      "source_id": "cosmopedia_openstax",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/openstax/train-00000-of-00002.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_openstax/data/openstax/train-00000-of-00002.parquet",
+      "bytes": 173501101,
+      "sha256": "bb0d51bf863f11feafb99ea9af56acec1b8b6837413f51a7498282c7e8f37381"
+    },
+    {
+      "source_id": "l3_zh_multistyle",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_zh_l3/multi_style/part-00284-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_zh_multistyle/data/ultrafineweb_zh_l3/multi_style/part-00284-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "bytes": 1077137010,
+      "sha256": "874471c18afb537d9c49ee53ec7091c825cfb9f4c13f9f0123e539e610a28d02"
+    },
+    {
+      "source_id": "cosmopedia_stanford",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/stanford/train-00004-of-00013.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_stanford/data/stanford/train-00004-of-00013.parquet",
+      "bytes": 254285272,
+      "sha256": "0e3d8f994b07f6b2193df02db50cfab05462aa67363ab915d38e415f474cddc8"
+    },
+    {
+      "source_id": "ultrafineweb_en",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_en/ultrafineweb-en-part-1795-of-2048.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_en/data/ultrafineweb_en/ultrafineweb-en-part-1795-of-2048.parquet",
+      "bytes": 1298026610,
+      "sha256": "a084a0eee606dd0b3ccbbd4d7dc4c5b33ef59b3b09f42a3de8f319c10bcef17c"
+    },
+    {
+      "source_id": "cosmopedia_stories",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/stories/train-00034-of-00043.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_stories/data/stories/train-00034-of-00043.parquet",
+      "bytes": 276806526,
+      "sha256": "701f6beea9d936a787792ed39d597d3ac87f817c4798af80d6cfe2cdfc6166ed"
+    },
+    {
+      "source_id": "cosmopedia_wikihow",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/wikihow/train-00000-of-00002.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_wikihow/data/wikihow/train-00000-of-00002.parquet",
+      "bytes": 250990566,
+      "sha256": "409f601f1c8eb559ca1173816eb48f2b6f6a6ab3e562a7111e78a6229ca7e152"
+    },
+    {
+      "source_id": "cosmopedia_web_v2",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/web_samples_v2/train-00057-of-00118.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_web_v2/data/web_samples_v2/train-00057-of-00118.parquet",
+      "bytes": 277224058,
+      "sha256": "ef61efec0d4a245b7bfa0b1a5eef052d9479809dfcc147e395b99d300b61d7b4"
+    },
+    {
+      "source_id": "cosmopedia_web_v1",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/web_samples_v1/train-00130-of-00139.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_web_v1/data/web_samples_v1/train-00130-of-00139.parquet",
+      "bytes": 279692660,
+      "sha256": "25255884cb0ed19ed7bce716a2761cd208079d0213aaa040e045f3564f7e800a"
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_zh/ultrafineweb-zh-part-184-of-256.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_zh/data/ultrafineweb_zh/ultrafineweb-zh-part-184-of-256.parquet",
+      "bytes": 1267336105,
+      "sha256": "1e9c31e9a7935d1003012371b8ff87d355b350231bf64a6c05031e39b246ce4e"
+    },
+    {
+      "source_id": "ultrafineweb_en",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_en/ultrafineweb-en-part-1632-of-2048.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_en/data/ultrafineweb_en/ultrafineweb-en-part-1632-of-2048.parquet",
+      "bytes": 1300307905,
+      "sha256": "108bda1846616c0093c5be5d004e21d1a9e348d8b231140e49a8551c197214a8"
+    },
+    {
+      "source_id": "ultrafineweb_en",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_en/ultrafineweb-en-part-1141-of-2048.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_en/data/ultrafineweb_en/ultrafineweb-en-part-1141-of-2048.parquet",
+      "bytes": 1299391889,
+      "sha256": "b485a8a4d2494cdc34dc344362a9ac6c669ec486ae5b79a860d87da9ef94b835"
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_zh/ultrafineweb-zh-part-146-of-256.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_zh/data/ultrafineweb_zh/ultrafineweb-zh-part-146-of-256.parquet",
+      "bytes": 1266057270,
+      "sha256": "b4a39f9f76ceb708569bfdd884cf34506f286721c6219873e129f0a0fefdf8a1"
+    },
+    {
+      "source_id": "ultrafineweb_en",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_en/ultrafineweb-en-part-1000-of-2048.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_en/data/ultrafineweb_en/ultrafineweb-en-part-1000-of-2048.parquet",
+      "bytes": 1295813221,
+      "sha256": "094701b137c83c79a3a39610e8db72d8e1bf44cdf6fe6c4779f7619116274987"
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_zh/ultrafineweb-zh-part-094-of-256.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_zh/data/ultrafineweb_zh/ultrafineweb-zh-part-094-of-256.parquet",
+      "bytes": 1265422423,
+      "sha256": "9291bf8cf52c161469034af5b0afa90bf356fa3c3c965f76adf0794f9071db97"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_0_of_10/shard_00000068_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_06_of_10/local-shard_0_of_10/shard_00000068_processed.parquet",
+      "bytes": 237191105,
+      "sha256": "ff32cf711725cd24d3e95fffc4ec8fa7bcfabe81680fc901c4266c3837612b0b"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_09_of_10/local-shard_9_of_10/shard_00000128_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_09_of_10/local-shard_9_of_10/shard_00000128_processed.parquet",
+      "bytes": 300957060,
+      "sha256": "1e414a6aa360ccb5dad2812b3efae9d6e654b35f88ab63a1086019c08fc5a3c4"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_3_of_10/shard_00000177_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_3_of_10/shard_00000177_processed.parquet",
+      "bytes": 328523141,
+      "sha256": "cbbdb5e01f145bf0726a66bb2a87b22376fab03a633ac190e13bb4683be7b675"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_1_of_10/shard_00000267_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_1_of_10/shard_00000267_processed.parquet",
+      "bytes": 222196843,
+      "sha256": "371d5de48d24a7c8e1bd944d3d37e0a8e80eb0b9fa27745f80de34e375858ed4"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_10_of_10/local-shard_6_of_10/shard_00000199_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_10_of_10/local-shard_6_of_10/shard_00000199_processed.parquet",
+      "bytes": 344991983,
+      "sha256": "259e414d90c0ec1f113e7032021aa8bed4459cb29dd380853515bde1e382631c"
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_zh/ultrafineweb-zh-part-190-of-256.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_zh/data/ultrafineweb_zh/ultrafineweb-zh-part-190-of-256.parquet",
+      "bytes": 1267639178,
+      "sha256": "ba9441cb1b2b4c93785f23ac25697d49660da34b287e4aeea838d463e001f90a"
+    },
+    {
+      "source_id": "ultrafineweb_zh",
+      "repository": "openbmb/Ultra-FineWeb",
+      "revision": "02c85641e3d19a854be2e09139c25adaa9518063",
+      "filename": "data/ultrafineweb_zh/ultrafineweb-zh-part-017-of-256.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/ultrafineweb_zh/data/ultrafineweb_zh/ultrafineweb-zh-part-017-of-256.parquet",
+      "bytes": 1265424724,
+      "sha256": "786efa1b1a6cee60e8d08398a1fdd0d9e9faf11fc6aba82b26c848ba77b8c90d"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_0_of_10/shard_00000247_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_07_of_10/local-shard_0_of_10/shard_00000247_processed.parquet",
+      "bytes": 230575012,
+      "sha256": "9a432bb155b08900cd5c79b97f7d5b573c3796537b41b4bd7ac6d4d0e0073839"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_01_of_10/local-shard_7_of_10/shard_00000140_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_01_of_10/local-shard_7_of_10/shard_00000140_processed.parquet",
+      "bytes": 303539803,
+      "sha256": "ffe922a93afe0e19068e9c43b90bf41d55edd7e664416824075ec1ca15d4f835"
+    },
+    {
+      "source_id": "dclm",
+      "repository": "mlfoundations/dclm-baseline-1.0-parquet",
+      "revision": "817d6752765f6a41261085171dd546b104f60626",
+      "filename": "filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_2_of_10/shard_00000066_processed.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/dclm/filtered/OH_eli5_vs_rw_v2_bigram_200k_train/fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train/processed_data/global-shard_08_of_10/local-shard_2_of_10/shard_00000066_processed.parquet",
+      "bytes": 215041204,
+      "sha256": "8bdd8378ae95b355e5fcfab93869e46d0f29720cc84e9c6c21595fb614e8b485"
+    },
+    {
+      "source_id": "finemath_4plus",
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "filename": "finemath-4plus/train-00011-of-00064.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/finemath_4plus/finemath-4plus/train-00011-of-00064.parquet",
+      "bytes": 287613757,
+      "sha256": "cc1f03a25f744f3595bc808a93b40ed5aa0f2b4976c0eebbadf693fe1ae9f7c9"
+    },
+    {
+      "source_id": "finemath_4plus",
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "filename": "finemath-4plus/train-00029-of-00064.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/finemath_4plus/finemath-4plus/train-00029-of-00064.parquet",
+      "bytes": 284671899,
+      "sha256": "33af174dbce679c11a11210e314c1da8bb0c905f352173d7a4f9c1e253752792"
+    },
+    {
+      "source_id": "finemath_4plus",
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "filename": "finemath-4plus/train-00038-of-00064.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/finemath_4plus/finemath-4plus/train-00038-of-00064.parquet",
+      "bytes": 286826637,
+      "sha256": "79ec06e3c4178bbe530bcf513787cf983c8194cd71ef68a059190d1e88cd09d8"
+    },
+    {
+      "source_id": "finemath_4plus",
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "filename": "finemath-4plus/train-00030-of-00064.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/finemath_4plus/finemath-4plus/train-00030-of-00064.parquet",
+      "bytes": 287047408,
+      "sha256": "eebf8fa736b3d01a39ffdc527f237b97515508d1d0f891c37b4b7b66e881f8ad"
+    },
+    {
+      "source_id": "finemath_4plus",
+      "repository": "HuggingFaceTB/finemath",
+      "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+      "filename": "finemath-4plus/train-00050-of-00064.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/finemath_4plus/finemath-4plus/train-00050-of-00064.parquet",
+      "bytes": 288979859,
+      "sha256": "493e3155e54f0b43e350cbd732f2733949d9237b6e65025f473d8aec81bb631b"
+    },
+    {
+      "source_id": "l3_en_multistyle",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_en_l3/multi_style/part-00086-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_en_multistyle/data/ultrafineweb_en_l3/multi_style/part-00086-f36f5a53-4a77-434b-b9bc-67ed69b93fe2-c000.snappy.parquet",
+      "bytes": 1077971318,
+      "sha256": "988e05c8253eedff96d5df09475740453880a7e99630ded042de1b7c675ed166"
+    },
+    {
+      "source_id": "l3_zh_qa",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_zh_l3/qa/part-00291-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_zh_qa/data/ultrafineweb_zh_l3/qa/part-00291-100cee91-ea2e-4268-9b98-1403cd5d9d11-c000.snappy.parquet",
+      "bytes": 1074320269,
+      "sha256": "e85c02e95245e4e4d67df790c3004242e3449155fbd6113973ac1f3b6224a7e0"
+    },
+    {
+      "source_id": "l3_zh_multistyle",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_zh_l3/multi_style/part-00240-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_zh_multistyle/data/ultrafineweb_zh_l3/multi_style/part-00240-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "bytes": 1077338531,
+      "sha256": "bf857371ed7c1beecf21272a149bb3ed8c7bf2ac232671a4ca7ff0291a29dc56"
+    },
+    {
+      "source_id": "l3_en_qa",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_en_l3/qa/part-00394-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_en_qa/data/ultrafineweb_en_l3/qa/part-00394-37dc9f21-f87f-4f43-8dd2-134424f1537a-c000.snappy.parquet",
+      "bytes": 1076778849,
+      "sha256": "49e2648c6fc7aa8cdeecbf69a941fcb2771c52f77b2abaea7617d00474e9b030"
+    },
+    {
+      "source_id": "cosmopedia_openstax",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/openstax/train-00001-of-00002.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_openstax/data/openstax/train-00001-of-00002.parquet",
+      "bytes": 173491421,
+      "sha256": "05ed6afca68a93f1ec1f062165a49c08dd6d29b2b728165fce7ab96a7f702e24"
+    },
+    {
+      "source_id": "cosmopedia_stanford",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/stanford/train-00005-of-00013.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_stanford/data/stanford/train-00005-of-00013.parquet",
+      "bytes": 254827783,
+      "sha256": "43a51b73e7014c92d53901cb9ae2dd34f48a731d3229c103464e3588098a04a0"
+    },
+    {
+      "source_id": "cosmopedia_auto_math",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/auto_math_text/train-00007-of-00018.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_auto_math/data/auto_math_text/train-00007-of-00018.parquet",
+      "bytes": 247714757,
+      "sha256": "614d3455651c98e6d550bd02e36703a4e604724ae27abf8b20289e8a819cbf44"
+    },
+    {
+      "source_id": "cosmopedia_web_v1",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/web_samples_v1/train-00017-of-00139.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_web_v1/data/web_samples_v1/train-00017-of-00139.parquet",
+      "bytes": 280072557,
+      "sha256": "c9ac2aa06b78cc303983009a5e5072656d3b95234839ad6c7d3f809e6e26aaa6"
+    },
+    {
+      "source_id": "cosmopedia_stories",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/stories/train-00035-of-00043.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_stories/data/stories/train-00035-of-00043.parquet",
+      "bytes": 276836941,
+      "sha256": "51839e0d7caaf95446dde44328892d734480ca908f4e3a295225b99df40653f5"
+    },
+    {
+      "source_id": "l3_zh_multistyle",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_zh_l3/multi_style/part-00113-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_zh_multistyle/data/ultrafineweb_zh_l3/multi_style/part-00113-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "bytes": 1078098139,
+      "sha256": "0475e79295300ecdcdf22b11f3a64722034698804917b8738ca5ca6b4d832f53"
+    },
+    {
+      "source_id": "l3_zh_multistyle",
+      "repository": "openbmb/Ultra-FineWeb-L3",
+      "revision": "bc3b1ba986fcaef6871b9790a413b16267c2de0f",
+      "filename": "data/ultrafineweb_zh_l3/multi_style/part-00020-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/l3_zh_multistyle/data/ultrafineweb_zh_l3/multi_style/part-00020-c13afd3b-b5fb-4acd-97dc-e045a844c126-c000.snappy.parquet",
+      "bytes": 1076411217,
+      "sha256": "85b816dc4e04c2abe2c1f25a1c57edf31b8ec92240b7099515df7d91fece6f86"
+    },
+    {
+      "source_id": "cosmopedia_web_v2",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/web_samples_v2/train-00035-of-00118.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_web_v2/data/web_samples_v2/train-00035-of-00118.parquet",
+      "bytes": 276447617,
+      "sha256": "a5494876cf05e669cad9e5ad19fe9ff97c60936d48248fa0734149df08540761"
+    },
+    {
+      "source_id": "cosmopedia_wikihow",
+      "repository": "HuggingFaceTB/cosmopedia",
+      "revision": "0ae6ec63f91742bd2d1eaef4f02232c55d719385",
+      "filename": "data/wikihow/train-00001-of-00002.parquet",
+      "local_path": "/mnt/models/CODE/mzy/bilingual_npu_cluster/data/raw_shards/cosmopedia_wikihow/data/wikihow/train-00001-of-00002.parquet",
+      "bytes": 251294034,
+      "sha256": "aa07f46fb093c7f86aadf07b790b88f13c99975304041de659610014d9ba8cc7"
+    }
+  ],
+  "total_bytes": 31238112422,
+  "started_unix": 1788412649.6085742,
+  "completed_unix": 1788413256.9252791,
+  "failed": []
+}

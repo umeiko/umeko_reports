@@ -1,0 +1,28 @@
+{
+  "base_model": "DALabCommunity/Haidass1.5-143M",
+  "hf_revision_pinned": "d8a00d4943971088e6f0f4e08fb317dd5ba33ed1",
+  "local_path_on_cluster": "/mnt/models/CODE/mzy/Haidass1.5-143M",
+  "role": "architecture + tokenizer donor; P0/P1 experiments train from deterministic random inits (see scripts/npu/gen_init*.py), not from these pretrained weights",
+  "files": {
+    "config.json": {
+      "bytes": 711,
+      "sha256": "6a0a0f93c13da6808b485f7d77a576205f11b1337e9ce8b076edafc223c026c7"
+    },
+    "model.safetensors": {
+      "bytes": 286179680,
+      "sha256": "76e7998a708d595f7bf5e3bca2c1dfd1c1e09cce8b73c1efaf999654395d7923"
+    },
+    "tokenizer.model": {
+      "bytes": 1298093,
+      "sha256": "dddb2e3e527f3ff79f3ee1e9c9282001c8c0505ef53107ba75126a26f9318c61"
+    },
+    "tokenizer_config.json": {
+      "bytes": 9686,
+      "sha256": "90f8e716595d7295770a77ebc58e88844d0f01951877397c1d4672a761e4c04f"
+    },
+    "special_tokens_map.json": {
+      "bytes": 666,
+      "sha256": "0a4718832938196b64a63318a9312119f97cd0bdbd6475b148a390c727d3dd3c"
+    }
+  }
+}
