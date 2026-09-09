@@ -7,10 +7,11 @@
 - [给“小白中的小白”看的实验解释](reports/exps_quality_scale/QUALITY_SCALE_BEGINNER_CN.md)
 - [严格复算与论文可用结论](reports/exps_quality_scale/QUALITY_SCALE_ANALYSIS_CN.md)
 - [红军、蓝军与虚拟 AC 意见](reports/exps_quality_scale/RED_BLUE_AC_REVIEW_CN.md)
+- [为什么 Scale 实验应进入正文，以及新的论文主线](reports/exps_quality_scale/PAPER_STORY_REFRAME_CN.md)
 - [论文级四面板图](reports/exps_quality_scale/figures/fig_quality_scale_summary.pdf)
 - [可复现分析脚本](scripts/analysis/analyze_exps_quality_scale.py)
 
-这组实验固定每个模型约 20B 训练 tokens，比较 56M、143M、263M、469M、803M 五档规模上的 Ultra-FineWeb-en 全量数据与 score≥0.9 子集。透明十任务复算显示最终 HQ 增益为 +0.39～+1.06 个百分点，但没有随参数量单调变化；ARC-E/ARC-C 五档均改善，HellaSwag 五档均下降。原始 JSON 的 `average` 实际只包含四个任务，报告已单独审计并更正口径。该实验目前为单次训练轨迹，应作为探索性附录而非 scaling law。
+这组实验固定每个模型约 20B 训练 tokens，比较 56M、143M、263M、469M、803M 五档规模上的 Ultra-FineWeb-en 全量数据与 score≥0.9 子集。透明十任务复算显示最终 HQ 增益为 +0.39～+1.06 个百分点，但没有随参数量单调变化；ARC-E/ARC-C 五档均改善，HellaSwag 五档均下降。原始 JSON 的 `average` 实际只包含四个任务，报告已单独审计并更正口径。该实验应作为正文的重要探索性结果，而不是 scaling law；字段审计、缺失点和逐 checkpoint 细节放在附录。
 
 ## 43M→143M Scale 分析（2026-09-09）
 
