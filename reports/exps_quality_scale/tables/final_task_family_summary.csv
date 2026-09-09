@@ -1,0 +1,11 @@
+parameters_m,family,tasks,base_macro_acc,hq_macro_acc,gap_acc_pp
+56,knowledge_science,mmlu;arc_easy;arc_challenge;sciq;openbookqa,0.3713112454214077,0.3864743638247355,1.5163118403327773
+56,commonsense_social,hellaswag;piqa;siqa;winogrande;csqa,0.4085975888201109,0.4146195176460973,0.6021928825986389
+143,knowledge_science,mmlu;arc_easy;arc_challenge;sciq;openbookqa,0.4128735201453839,0.42160933789377425,0.8735817748390226
+143,commonsense_social,hellaswag;piqa;siqa;winogrande;csqa,0.433984020402378,0.4331033751514141,-0.08806452509637741
+263,knowledge_science,mmlu;arc_easy;arc_challenge;sciq;openbookqa,0.4286445190380757,0.4411669635914766,1.2522444553400898
+263,commonsense_social,hellaswag;piqa;siqa;winogrande;csqa,0.4505375427121524,0.45508474461490805,0.454720190275566
+469,knowledge_science,mmlu;arc_easy;arc_challenge;sciq;openbookqa,0.442687701410631,0.46445817110112664,2.1770469690495604
+469,commonsense_social,hellaswag;piqa;siqa;winogrande;csqa,0.4675886348224408,0.4663840538571319,-0.12045809653088879
+803,knowledge_science,mmlu;arc_easy;arc_challenge;sciq;openbookqa,0.4576663653803381,0.4686730864863802,1.1006721106042137
+803,commonsense_social,hellaswag;piqa;siqa;winogrande;csqa,0.47432431135253567,0.4801704580477459,0.5846146695210243

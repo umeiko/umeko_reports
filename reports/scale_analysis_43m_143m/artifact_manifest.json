@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "source_script": "scripts/analysis/analyze_scale_43m_143m.py",
+  "source_script_sha256": "b669db0877fa6adfbd07c4270df17cf31025b2806c9ab2aa90102d6fbfe0bb6c",
+  "artifacts": {
+    "tables/key_numbers.json": "05fc8ceec8a8b09f53e5a245169a06348a3e022e067b27806d444f3592a31c9b",
+    "tables/scale_gains_by_language.csv": "98114f434f8fb931883075cd9b3e126a6f359ffb408b6ccd58132fa81098d932",
+    "tables/scale_metrics_aggregate.csv": "63abc563259cac297cbc22aec8c00d03fa7924b7d2d757866251b187d87f65c2",
+    "tables/schedule_penalties_vs_iid.csv": "29cf0b40f96b3c779956fc4242669df60d23cbebc42d2681e1b87d0dc8784316",
+    "figures/fig_scale_summary.pdf": "4b4037c8dc3a30de86a4245dabc852a26272327a2c18cdbe6bd467413825055f",
+    "figures/fig_scale_summary.png": "a8d7466904473d794b94671a8fab3bce7221a735e9549237ee625dc21ba7735c"
+  }
+}

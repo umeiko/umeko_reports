@@ -1,0 +1,111 @@
+{
+  "source_repository": "https://huggingface.co/DALabCommunity/EXPS",
+  "source_commit": "4d45f05583e7370fd452a99635d4c984a9eb9d5e",
+  "input_sha256": {
+    "56M": "1858d4e7b9dae7e699bf69feb92f4c641fe0be485addd4587a873d05155a6763",
+    "143M": "47f35194f60022257f9cf9d0672fa402ec3bbfd498f663b0a7e7dafadabb07fe",
+    "263M": "6d2c39cb58379a008a3fcc19e52fda9278ea42c592be9661639450bc84672f98",
+    "469M": "965433e08f6953bf9d78aac5626fb514fe8691e3d56d70525852c35684205dff",
+    "803M": "850b7b1e6254d98b11c9ab5cc8dc5ee78924848e40fe02fc0c37f60b6e2e77af"
+  },
+  "sizes_m": [
+    56,
+    143,
+    263,
+    469,
+    803
+  ],
+  "conditions": {
+    "base": "ultra-en",
+    "hq": "ultra-en-hq"
+  },
+  "tasks": [
+    "mmlu",
+    "arc_easy",
+    "arc_challenge",
+    "sciq",
+    "openbookqa",
+    "hellaswag",
+    "piqa",
+    "siqa",
+    "winogrande",
+    "csqa"
+  ],
+  "warnings": [
+    "One training run per size and data condition; no seed-based uncertainty is available.",
+    "Repeated checkpoints from the same run are not independent replicates.",
+    "No item-level predictions are included, so paired benchmark confidence intervals cannot be reconstructed.",
+    "No ordered data manifest, unique-document count, or train-loss log is included in the current checkout.",
+    "README describes the baseline as unfiltered in the design section but as score >= 0.5 in the conclusion; the exact baseline rule requires provenance clarification.",
+    "The mechanism claim that filtering removes 67% of data is stated in README but not auditable from included artifacts.",
+    "The stored average field covers four tasks, despite ten task records being present."
+  ],
+  "checkpoint_counts": {
+    "56M": {
+      "base": 20,
+      "hq": 20
+    },
+    "143M": {
+      "base": 20,
+      "hq": 20
+    },
+    "263M": {
+      "base": 20,
+      "hq": 20
+    },
+    "469M": {
+      "base": 20,
+      "hq": 20
+    },
+    "803M": {
+      "base": 21,
+      "hq": 21
+    }
+  },
+  "paired_checkpoint_count": 101,
+  "common_checkpoint_count_across_sizes": 20,
+  "common_tokens_b": [
+    1.049,
+    2.097,
+    3.146,
+    4.194,
+    5.243,
+    6.291,
+    7.34,
+    8.389,
+    9.437,
+    10.486,
+    11.534,
+    12.583,
+    13.631,
+    14.68,
+    15.729,
+    16.777,
+    17.826,
+    18.874,
+    19.923,
+    19.999
+  ],
+  "missing_records": [
+    {
+      "parameters_m": 263,
+      "condition": "base",
+      "tokens_b": 6.291,
+      "missing_tasks": [
+        "sciq"
+      ]
+    }
+  ],
+  "original_average_definition": {
+    "tasks": [
+      "hellaswag",
+      "arc_easy",
+      "arc_challenge",
+      "piqa"
+    ],
+    "metric": "unweighted macro mean of raw acc",
+    "max_absolute_reconstruction_error": 1.1102230246251565e-16,
+    "note": "The stored field named average is a four-task macro, not a ten-task macro."
+  },
+  "complete_macro10_checkpoint_pairs": 100
+}

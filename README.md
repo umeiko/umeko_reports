@@ -2,6 +2,25 @@
 
 这是 Haidass 论文项目的公开实验报告仓库。建议第一次阅读时直接打开：
 
+## 56M–803M 英文数据质量 Scale 扫描（2026-09-09）
+
+- [给“小白中的小白”看的实验解释](reports/exps_quality_scale/QUALITY_SCALE_BEGINNER_CN.md)
+- [严格复算与论文可用结论](reports/exps_quality_scale/QUALITY_SCALE_ANALYSIS_CN.md)
+- [红军、蓝军与虚拟 AC 意见](reports/exps_quality_scale/RED_BLUE_AC_REVIEW_CN.md)
+- [论文级四面板图](reports/exps_quality_scale/figures/fig_quality_scale_summary.pdf)
+- [可复现分析脚本](scripts/analysis/analyze_exps_quality_scale.py)
+
+这组实验固定每个模型约 20B 训练 tokens，比较 56M、143M、263M、469M、803M 五档规模上的 Ultra-FineWeb-en 全量数据与 score≥0.9 子集。透明十任务复算显示最终 HQ 增益为 +0.39～+1.06 个百分点，但没有随参数量单调变化；ARC-E/ARC-C 五档均改善，HellaSwag 五档均下降。原始 JSON 的 `average` 实际只包含四个任务，报告已单独审计并更正口径。该实验目前为单次训练轨迹，应作为探索性附录而非 scaling law。
+
+## 43M→143M Scale 分析（2026-09-09）
+
+- [给“小白中的小白”看的 Scale 实验解释](reports/scale_analysis_43m_143m/SCALE_ANALYSIS_BEGINNER_CN.md)
+- [严谨技术分析与论文可用结论](reports/scale_analysis_43m_143m/SCALE_ANALYSIS_CN.md)
+- [论文级四面板图](reports/scale_analysis_43m_143m/figures/fig_scale_summary.pdf)
+- [可复现分析脚本](scripts/analysis/analyze_scale_43m_143m.py)
+
+这是一项 43.46M/100.66M tokens 与 143.07M/331.35M tokens 的两点成比例 Scale 对照，不是完整 scaling law。结果显示逐序列 IID 混合在两个规模均最优；一次性语言切换使先学语言丢失大部分规模收益。
+
 ## 中英翻译 SFT 实验准备方案
 
 未来的 Haidass1.5-143M 简体中文↔英文翻译 SFT 调研、训练配置、数据登记表和冻结评测协议已经整理在 [`SFT/Translate/`](SFT/Translate/README.md)。

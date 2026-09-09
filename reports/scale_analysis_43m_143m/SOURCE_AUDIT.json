@@ -1,0 +1,41 @@
+{
+  "audit_date": "2026-09-09",
+  "sources": {
+    "umeko_reports": {
+      "url": "https://github.com/umeiko/umeko_reports",
+      "commit_analyzed": "cf40e0b",
+      "new_cluster_artifacts_found": true,
+      "artifacts_used": [
+        "reports/p0_43m_npu_repro/tables/final_metrics_per_seed.csv",
+        "reports/p1_143m_proportional_npu/tables/final_metrics_per_seed.csv"
+      ]
+    },
+    "iclr_submission": {
+      "url": "https://github.com/umeiko/ICLR-2027-Conference-Submissions",
+      "commit_pulled": "5e98c4e",
+      "newer_cluster_artifacts_found": false,
+      "note": "The newest commit remains dated 2026-08-31; confirmatory P2 result placeholders remain."
+    },
+    "huggingface_exps": {
+      "url": "https://huggingface.co/DALabCommunity/EXPS",
+      "authenticated_account": "umeiko",
+      "credential_stored": false,
+      "model_api_status": 404,
+      "dataset_api_status": 404,
+      "space_api_status": 404,
+      "used_in_analysis": false,
+      "resolution_needed": "Correct repository URL or grant this fine-grained token read access to the private repository."
+    }
+  },
+  "run_audit": {
+    "43m_complete_runs": 12,
+    "143m_complete_runs": 12,
+    "incomplete_runs": 0,
+    "seed_ids": [2027, 2028],
+    "per_seed_csv_sha256": {
+      "43m": "e806d05fe4483c40dba118eddd0e1e62422244dcb7f813adca154f9e1bba0681",
+      "143m": "c79b7014e3271e65b6389389f25cdf0e309e582265a3e9639ef453d8409f44e3"
+    },
+    "text_manifest_note": "Windows checkout uses CRLF because core.autocrlf=true. Text report/JSON hashes match the published manifest after normalization to LF."
+  }
+}

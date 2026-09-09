@@ -1,0 +1,83 @@
+{
+  "analysis_type": "exploratory_single_run_five_size_quality_filtering_sweep",
+  "source_commit": "4d45f05583e7370fd452a99635d4c984a9eb9d5e",
+  "models": 10,
+  "sizes_m": [
+    56,
+    143,
+    263,
+    469,
+    803
+  ],
+  "training_tokens_b_per_model": 20,
+  "paired_size_checkpoint_count": 101,
+  "macro10_positive_pairs": 98,
+  "macro10_total_pairs": 100,
+  "final_macro10_raw": [
+    {
+      "parameters_m": 56,
+      "base_macro10_acc": 0.3899544171207593,
+      "hq_macro10_acc": 0.4005469407354164,
+      "gap_macro10_acc_pp": 1.0592523614657083,
+      "hq_task_wins_raw": 9
+    },
+    {
+      "parameters_m": 143,
+      "base_macro10_acc": 0.42342877027388093,
+      "hq_macro10_acc": 0.4273563565225942,
+      "gap_macro10_acc_pp": 0.3927586248713225,
+      "hq_task_wins_raw": 4
+    },
+    {
+      "parameters_m": 263,
+      "base_macro10_acc": 0.439591030875114,
+      "hq_macro10_acc": 0.4481258541031924,
+      "gap_macro10_acc_pp": 0.8534823228078278,
+      "hq_task_wins_raw": 6
+    },
+    {
+      "parameters_m": 469,
+      "base_macro10_acc": 0.45513816811653596,
+      "hq_macro10_acc": 0.4654211124791292,
+      "gap_macro10_acc_pp": 1.0282944362593358,
+      "hq_task_wins_raw": 6
+    },
+    {
+      "parameters_m": 803,
+      "base_macro10_acc": 0.46599533836643675,
+      "hq_macro10_acc": 0.47442177226706306,
+      "gap_macro10_acc_pp": 0.842643390062619,
+      "hq_task_wins_raw": 5
+    }
+  ],
+  "final_gap_log_size_regression": {
+    "slope_pp_per_ln_parameters": 0.01001036414973553,
+    "r2": 0.0015198360470751737,
+    "interpretation": "No monotonic final quality-gain trend with size is identified."
+  },
+  "checkpoint_log_size_slope": {
+    "early_lt_10b_mean": -0.04278238216131334,
+    "late_gt_15b_mean": 0.005078952449056456,
+    "note": "Signs vary across checkpoints; this does not support a stable early/late reversal claim."
+  },
+  "original_average": {
+    "tasks": [
+      "hellaswag",
+      "arc_easy",
+      "arc_challenge",
+      "piqa"
+    ],
+    "metric": "unweighted macro mean of raw acc",
+    "max_absolute_reconstruction_error": 1.1102230246251565e-16,
+    "note": "The stored field named average is a four-task macro, not a ten-task macro."
+  },
+  "limitations": [
+    "One training run per size and data condition; no seed-based uncertainty is available.",
+    "Repeated checkpoints from the same run are not independent replicates.",
+    "No item-level predictions are included, so paired benchmark confidence intervals cannot be reconstructed.",
+    "No ordered data manifest, unique-document count, or train-loss log is included in the current checkout.",
+    "README describes the baseline as unfiltered in the design section but as score >= 0.5 in the conclusion; the exact baseline rule requires provenance clarification.",
+    "The mechanism claim that filtering removes 67% of data is stated in README but not auditable from included artifacts.",
+    "The stored average field covers four tasks, despite ten task records being present."
+  ]
+}

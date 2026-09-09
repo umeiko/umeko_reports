@@ -1,0 +1,74 @@
+{
+  "analysis_type": "two_point_proportional_scale_diagnostic_not_scaling_law",
+  "input_sha256": {
+    "43M": "e806d05fe4483c40dba118eddd0e1e62422244dcb7f813adca154f9e1bba0681",
+    "143M": "c79b7014e3271e65b6389389f25cdf0e309e582265a3e9639ef453d8409f44e3"
+  },
+  "registered_rows": 24,
+  "conditions": [
+    "en_only",
+    "zh_only",
+    "iid_50",
+    "en_first",
+    "zh_first",
+    "alternating"
+  ],
+  "seeds": [
+    2027,
+    2028
+  ],
+  "parameter_ratio_143m_over_43m": 3.2919085358849984,
+  "token_ratio_143m_over_43m": 3.2916666666666665,
+  "iid_mean_bpb": {
+    "43M": 1.5962417717609014,
+    "143M": 1.3402703280201083
+  },
+  "iid_mean_relative_reduction_pct": 16.035881798683736,
+  "mean_penalty_vs_iid_pct": {
+    "43M": {
+      "alternating": 4.560894536697058,
+      "en_first": 10.907191367679303,
+      "zh_first": 26.548671089202625
+    },
+    "143M": {
+      "alternating": 4.6377973842182785,
+      "en_first": 17.761021891305397,
+      "zh_first": 40.41975670882179
+    }
+  },
+  "preregistered_balanced_relative_penalty_pct": {
+    "43M": {
+      "alternating": 4.567720505252071,
+      "en_first": 12.007300991232517,
+      "zh_first": 23.894744777868215
+    },
+    "143M": {
+      "alternating": 4.6166275632966265,
+      "en_first": 19.732877506934933,
+      "zh_first": 36.407960554373616
+    }
+  },
+  "forgetting": {
+    "en_first_english": {
+      "43M": 0.3080417032840098,
+      "143M": 0.45683328485429014
+    },
+    "zh_first_chinese": {
+      "43M": 0.8267729096879232,
+      "143M": 1.0911992339514014
+    }
+  },
+  "scale_dividend_capture_pct": {
+    "en_first_english": 29.302580256138018,
+    "zh_first_chinese": 11.8106629430228,
+    "alternating_english": 105.78750451818274,
+    "alternating_chinese": 102.97171892964121
+  },
+  "limitations": [
+    "Only two scale points; no scaling-law exponent is identified.",
+    "Parameters, training tokens, updates, and pool size change together.",
+    "Two seeds; sample SD is descriptive and not a reliable confidence interval.",
+    "Public artifacts do not include per-document NLL, preventing document bootstrap.",
+    "Intrinsic BPB only; no downstream-task result is available for these runs."
+  ]
+}

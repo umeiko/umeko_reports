@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "source_script": "scripts/analysis/analyze_exps_quality_scale.py",
+  "source_script_sha256": "368b9c60023975b1a46dadd4952344a457f047a845c0e7b70f878770e920e87d",
+  "artifacts": {
+    "figures/fig_quality_scale_summary.pdf": "0b65b2b4d5009071b029caba283471727977fc50dc3274b443d89c8e59cd328d",
+    "figures/fig_quality_scale_summary.png": "ede93f978b4afa2bf8fe6da475a0ba90606bb1b96a0049a8a51785dd09e475e0",
+    "tables/checkpoint_macro10_summary.csv": "ea3902f4b3a7f04d5713fe83e16c12bb108e39bbfd9219303464e2a3edd14e9c",
+    "tables/final_macro_summary.csv": "454ae024f5990119dbbc876c2939c02c5f9067326721f744e2f09d06cf68486e",
+    "tables/final_task_family_summary.csv": "49fd99acc22e9054106ee7a03bcd92b4612f30a628137b22aac2929d80dd0acd",
+    "tables/final_task_scores.csv": "a4c490645be4ee97aa57a79aebd6df9f2fdc070c09fc257cb1e8b0664a423fce",
+    "tables/key_numbers.json": "62b504296c065bccdb52a1b53b7501c41f14e9707b9a223a7558f5c2ac27dffd",
+    "tables/paired_checkpoint_task_gaps.csv": "217fb9b6b4aaa1e254523715d7b28a15bc6afd409717f64654cf80657d8987ce",
+    "tables/scale_regression_diagnostics.csv": "09d5f255985025a58c545f5339b39ba8b3ce0a1f8a741c7c8e062e5887d01b72",
+    "tables/training_stage_summary.csv": "b3b2e4f11a1c986a7447fff3e71635f001223fb8930f593b8fd3de347c433289"
+  }
+}
