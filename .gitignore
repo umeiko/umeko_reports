@@ -5,3 +5,6 @@ data/
 runs/
 cache/
 *.tmp
+
+# Generated figure PDFs: readable PNGs retained; vector manuscript assets live in the paper repository.
+reports/**/figures/*.pdf

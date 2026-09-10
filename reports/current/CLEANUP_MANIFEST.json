@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-10",
+  "action": "remove_redundant_generated_pdf_keep_png_source_and_git_history",
+  "counts": {
+    "reports": 10,
+    "paper": 8
+  },
+  "recover_from": {
+    ".reports-sync": "cdd9ac071bb89fd718d09a346c1c0ccc1e64095a",
+    ".repo-sync": "14c8fe216cc0853d2a58545d2515a6353be5d2d1"
+  },
+  "historical_manifests": "Unchanged historical manifests record original generated outputs; removed PDF entries are superseded only for availability by this cleanup ledger. Original numeric evidence is unchanged.",
+  "entries": [
+    {
+      "repository": ".reports-sync",
+      "path": "reports/exps_quality_scale/figures/fig_quality_scale_summary.pdf",
+      "sha256": "0b65b2b4d5009071b029caba283471727977fc50dc3274b443d89c8e59cd328d",
+      "replacement": "reports/exps_quality_scale/figures/fig_quality_scale_summary.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p0_scaled_100m_all_sources_2080ti/figures/final_bilingual_tradeoff.pdf",
+      "sha256": "25b32c34e6d00dc23364276a0e9f35bd8f2aa47b78f12c2faa0b1bb789c6f1f0",
+      "replacement": "reports/p0_scaled_100m_all_sources_2080ti/figures/final_bilingual_tradeoff.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p0_scaled_100m_all_sources_2080ti/figures/order_effect_bpb_curves.pdf",
+      "sha256": "b580d7c11044315aef3c45d96df1dcf34e8db4bc8de1a9db440b173fe896bd55",
+      "replacement": "reports/p0_scaled_100m_all_sources_2080ti/figures/order_effect_bpb_curves.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p0_scaled_100m_all_sources_2080ti/figures/training_loss_curves.pdf",
+      "sha256": "621903ae462e647b1f44df88ba8e7fce899a5fa12a8b3c140448a2200d3fe92e",
+      "replacement": "reports/p0_scaled_100m_all_sources_2080ti/figures/training_loss_curves.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p0_scaled_100m_all_sources_2080ti/figures/validation_bpb_curves.pdf",
+      "sha256": "5a510146f7b370ce8b5e62e6ab9b20b4e2cbed2540046de8b4b286f5ee6af85e",
+      "replacement": "reports/p0_scaled_100m_all_sources_2080ti/figures/validation_bpb_curves.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p1_143m_proportional_npu/figures/fig_dev_en.pdf",
+      "sha256": "d490487521ba4bbf52d22e78b5949a7328a7b9ce2c3b1bd2efb62245980a5056",
+      "replacement": "reports/p1_143m_proportional_npu/figures/fig_dev_en.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p1_143m_proportional_npu/figures/fig_dev_zh.pdf",
+      "sha256": "6946cbae6ccc826b33b58c2792a411390513cbb3091280cb82a7a94fcf6c65d7",
+      "replacement": "reports/p1_143m_proportional_npu/figures/fig_dev_zh.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p1_143m_proportional_npu/figures/fig_forgetting.pdf",
+      "sha256": "73ef55740b6c4b28e3756501178ed0c5c8d904d64b4282adcf5e63b6bd38c570",
+      "replacement": "reports/p1_143m_proportional_npu/figures/fig_forgetting.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/p1_143m_proportional_npu/figures/fig_test_bar.pdf",
+      "sha256": "2a2e08ff359e1aba6a2f3808725d2f2dc491b87b9dd01c50c953f37a66b526bc",
+      "replacement": "reports/p1_143m_proportional_npu/figures/fig_test_bar.png"
+    },
+    {
+      "repository": ".reports-sync",
+      "path": "reports/scale_analysis_43m_143m/figures/fig_scale_summary.pdf",
+      "sha256": "4b4037c8dc3a30de86a4245dabc852a26272327a2c18cdbe6bd467413825055f",
+      "replacement": "reports/scale_analysis_43m_143m/figures/fig_scale_summary.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/final_bilingual_tradeoff.pdf",
+      "sha256": "25b32c34e6d00dc23364276a0e9f35bd8f2aa47b78f12c2faa0b1bb789c6f1f0",
+      "replacement": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/final_bilingual_tradeoff.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/order_effect_bpb_curves.pdf",
+      "sha256": "b580d7c11044315aef3c45d96df1dcf34e8db4bc8de1a9db440b173fe896bd55",
+      "replacement": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/order_effect_bpb_curves.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/training_loss_curves.pdf",
+      "sha256": "621903ae462e647b1f44df88ba8e7fce899a5fa12a8b3c140448a2200d3fe92e",
+      "replacement": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/training_loss_curves.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/validation_bpb_curves.pdf",
+      "sha256": "5a510146f7b370ce8b5e62e6ab9b20b4e2cbed2540046de8b4b286f5ee6af85e",
+      "replacement": "local_bilingual_2080ti/reports/p0_scaled_100m_all_sources_2080ti/figures/validation_bpb_curves.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/final_bilingual_tradeoff.pdf",
+      "sha256": "4025b49ce190a63694b1c85d336c88921583f5c3f3b004d2e063120315578124",
+      "replacement": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/final_bilingual_tradeoff.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/order_effect_bpb_curves.pdf",
+      "sha256": "4c870ced70e4261a2e92cdff18a11868437f6c9f0b32e53020fd6a2424a15a32",
+      "replacement": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/order_effect_bpb_curves.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/training_loss_curves.pdf",
+      "sha256": "5aec13b5431d56220e4861ba3ff71c5a24fda71662f6465da38b6e63498093c9",
+      "replacement": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/training_loss_curves.png"
+    },
+    {
+      "repository": ".repo-sync",
+      "path": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/validation_bpb_curves.pdf",
+      "sha256": "0afd53919282c679bc7eda5d9b475621b153b2d8f79b259bed605bc4876f6064",
+      "replacement": "local_bilingual_2080ti/reports/smoke_all_haidass_sources_2080ti/figures/validation_bpb_curves.png"
+    }
+  ]
+}

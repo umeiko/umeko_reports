@@ -1,5 +1,7 @@
 # EXPS 五档数据质量 Scale 实验：严格复算报告
 
+> 本报告保留原始复算记录。2026-09-10 更新：五档 Scale 已完成且进入正文；本轮新增 [评分/聚合敏感性](../current/QUALITY_METRIC_SENSITIVITY_CN.md)。任务下降模式须注明 raw 口径，acc_norm 不是随机基线校正。旧的附录定位和大种子补跑建议已被 [当前进展](../current/PROGRESS_CN.md) 替代。
+
 ## 摘要
 
 本报告独立复算 `DALabCommunity/EXPS` 提交 `4d45f05583e7370fd452a99635d4c984a9eb9d5e` 中的五档英文预训练实验。实验在 56M、143M、263M、469M、803M 参数规模上，分别使用 Ultra-FineWeb-en 全量数据和 `fastText score >= 0.9` 子集训练至约 20B tokens，并沿训练轨迹做 zero-shot 下游评测。

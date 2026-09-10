@@ -1,5 +1,7 @@
 # 43M→143M 成比例 Scale-up 独立分析
 
+> 历史数值保留。EXPS 已成功拉取并完成另一个英文质量 Scale 分析，旧文访问失败状态不再适用。历史 BPB 存在目标范围/字节分母与 EOS 约定问题，现按打包块损失解释；相同语言内相对量与跨语言绝对量不能混用。当前边界和已完成清单见 [进展总览](../current/PROGRESS_CN.md)。
+
 分析日期：2026-09-09。分析脚本：`scripts/analysis/analyze_scale_43m_143m.py`。
 
 ## 结论摘要
@@ -117,4 +119,3 @@ Alternating 在英文和中文上分别获得 IID 绝对 scale 收益的 105.8% 
 ## 9. 数据缺口
 
 用户指定的 `https://huggingface.co/DALabCommunity/EXPS` 在 2026-09-09 使用有效、已认证的账户 token 查询时，对 model、dataset 和 space API 均返回 404，组织可见仓库列表中也没有该名称。因此本报告没有使用 EXPS 数据。待仓库地址或权限修正后，应把其中更多参数规模点接入同一脚本，再决定是否能够拟合 scaling curve。
-

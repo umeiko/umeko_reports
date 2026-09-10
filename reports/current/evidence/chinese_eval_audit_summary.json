@@ -1,0 +1,822 @@
+{
+  "audit_date": "2026-09-10",
+  "audit_scope": "Existing outputs only; no training or model inference run.",
+  "source_output_directory": "eval_outputs/v15_zh_bf16/DALabCommunity__Haidass1.5-143M",
+  "model": {
+    "repository": "DALabCommunity/Haidass1.5-143M",
+    "revision": "d8a00d4943971088e6f0f4e08fb317dd5ba33ed1",
+    "parameters": 143071296,
+    "dtype": "bfloat16",
+    "model_revision_is_recorded_not_independently_tensor_hashed": true
+  },
+  "evaluation": {
+    "lm_eval_version": "0.4.12",
+    "transformers_version": "4.51.0",
+    "harness_git_commit": null,
+    "max_length": 4096,
+    "num_fewshot": 0,
+    "chat_template": null,
+    "system_instruction": null,
+    "task_repeats": 1,
+    "should_decontaminate": false,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234,
+    "run_start_unix": 1788019123.9519584,
+    "run_start_utc": "2026-08-29T15:58:43Z",
+    "duration_seconds": 805.5515354999807
+  },
+  "dataset_revisions_in_current_preflight_script_not_pinned_in_result_loader_config": {
+    "ceval/ceval-exam": "617524a00b307ff6f9933702f724131fe12ca7ce",
+    "haonan-li/cmmlu": "efcc940752ea4a1ea94d2727f11f83858d64fc8e",
+    "cambridgeltl/xcopa": "042f78955ba48e6404616762fa6e05e839c3907a",
+    "Muennighoff/xwinograd": "90b619ef5278605cd4f572e3e8506ab16afd44f2"
+  },
+  "source_results_file": "results_2026-08-30T00-12-02.015088.json",
+  "source_results_sha256": "97cceb9bbc89e9fc7ca59fc8dd97f204b1cc985c3cbe4cd7af0a26c7c67c0c0c",
+  "sample_manifest_digest": "e1cff753356298c87b5e226b02377979d9d5261553008d12586c47ab901dc09b",
+  "sample_manifest_digest_format": "UTF-8, sorted file name, file + TAB + lowercase SHA256 + LF, concatenated",
+  "summaries": [
+    {
+      "task": "ceval-valid",
+      "sample_files": 52,
+      "n": 1346,
+      "correct": 349,
+      "accuracy": 0.25928677563150077,
+      "stored_accuracy": 0.25928677563150077,
+      "stored_standard_error": 0.011949531007737628,
+      "pooled_bernoulli_standard_error": 0.011949619882091802,
+      "subject_macro_accuracy": 0.26666739533142597,
+      "wilson95": [
+        0.23658299213255737,
+        0.2833606310495804
+      ],
+      "score_argmax_accuracy_mismatches": 0,
+      "per_task_aggregate_mismatches": 0,
+      "sample_count_mismatches": 0,
+      "nonfinite_scores": 0,
+      "top_score_ties": 152,
+      "predicted_option_counts": [
+        222,
+        134,
+        844,
+        146
+      ],
+      "gold_option_counts": [
+        310,
+        339,
+        344,
+        353
+      ],
+      "unique_doc_hashes": 1346
+    },
+    {
+      "task": "cmmlu",
+      "sample_files": 67,
+      "n": 11582,
+      "correct": 2949,
+      "accuracy": 0.25461923674667586,
+      "stored_accuracy": 0.25461923674667586,
+      "stored_standard_error": 0.004052312031024866,
+      "pooled_bernoulli_standard_error": 0.00404819724823826,
+      "subject_macro_accuracy": 0.2547889118803468,
+      "wilson95": [
+        0.2467675163417672,
+        0.26263367646735947
+      ],
+      "score_argmax_accuracy_mismatches": 0,
+      "per_task_aggregate_mismatches": 0,
+      "sample_count_mismatches": 0,
+      "nonfinite_scores": 0,
+      "top_score_ties": 1338,
+      "predicted_option_counts": [
+        2683,
+        725,
+        6521,
+        1653
+      ],
+      "gold_option_counts": [
+        2926,
+        2883,
+        2877,
+        2896
+      ],
+      "unique_doc_hashes": 11579
+    },
+    {
+      "task": "xcopa_zh",
+      "sample_files": 1,
+      "n": 500,
+      "correct": 289,
+      "accuracy": 0.578,
+      "stored_accuracy": 0.578,
+      "stored_standard_error": 0.022109039310618563,
+      "pooled_bernoulli_standard_error": 0.022109039310618563,
+      "subject_macro_accuracy": 0.578,
+      "wilson95": [
+        0.534276977868969,
+        0.6205336250190289
+      ],
+      "score_argmax_accuracy_mismatches": 0,
+      "per_task_aggregate_mismatches": 0,
+      "sample_count_mismatches": 0,
+      "nonfinite_scores": 0,
+      "top_score_ties": 5,
+      "predicted_option_counts": [
+        273,
+        227,
+        0,
+        0
+      ],
+      "gold_option_counts": [
+        250,
+        250,
+        0,
+        0
+      ],
+      "unique_doc_hashes": 500
+    },
+    {
+      "task": "xwinograd_zh",
+      "sample_files": 1,
+      "n": 504,
+      "correct": 300,
+      "accuracy": 0.5952380952380952,
+      "stored_accuracy": 0.5952380952380952,
+      "stored_standard_error": 0.021885737306432288,
+      "pooled_bernoulli_standard_error": 0.021885737306432288,
+      "subject_macro_accuracy": 0.5952380952380952,
+      "wilson95": [
+        0.5518213105200889,
+        0.6372140632812753
+      ],
+      "score_argmax_accuracy_mismatches": 0,
+      "per_task_aggregate_mismatches": 0,
+      "sample_count_mismatches": 0,
+      "nonfinite_scores": 0,
+      "top_score_ties": 45,
+      "predicted_option_counts": [
+        261,
+        243,
+        0,
+        0
+      ],
+      "gold_option_counts": [
+        247,
+        257,
+        0,
+        0
+      ],
+      "unique_doc_hashes": 504
+    }
+  ],
+  "sample_manifest": [
+    {
+      "file": "samples_ceval-valid_accountant_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "e4a7322420d0f74f7d354f9bafa53ac9bd4f9402e6c358f9fcc2839c3e6db319",
+      "records": 49
+    },
+    {
+      "file": "samples_ceval-valid_advanced_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "39509a74a6411cc93e867a6e7cbee601f2cc7881561547a8a1f51874743ac0ec",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_art_studies_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "e6efcbfbe4a8e16b645af6c98d321c89cdae23e39a5e2b56fb78ff13fde28582",
+      "records": 33
+    },
+    {
+      "file": "samples_ceval-valid_basic_medicine_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "ed9a6e06168ce8e2edd196e61e246820b07d4aa02167368533d49cfdc6b79ea0",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_business_administration_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "c0dbe2016f73f538f62adf3273c22a452dcd58b8fcbe1d2d3ca239d13b89986b",
+      "records": 33
+    },
+    {
+      "file": "samples_ceval-valid_chinese_language_and_literature_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "c5c386459754e26d8e4729f8ac4bfddd0b1b7dea2892638302c60ab0d0b48475",
+      "records": 23
+    },
+    {
+      "file": "samples_ceval-valid_civil_servant_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7847c6250eb673409a239d1b716c0233a9a0b390ce61e0b84664b29ae70deb0e",
+      "records": 47
+    },
+    {
+      "file": "samples_ceval-valid_clinical_medicine_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "6154722d90d5e7982c01e0a8ad1c0513c60d8ef3f8b28f46d16b4c785caf9bef",
+      "records": 22
+    },
+    {
+      "file": "samples_ceval-valid_college_chemistry_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "0a7c5b638d48425b86ac99499d8ae873f387db9774b2658308fae57c9768a51e",
+      "records": 24
+    },
+    {
+      "file": "samples_ceval-valid_college_economics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "c0c1bf53813edee1911add01804940798634aa652af9104962a65e3962ac7ee2",
+      "records": 55
+    },
+    {
+      "file": "samples_ceval-valid_college_physics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7f4b19b2a3bf0aa3364b12b2ae0d8f9027c1fec5d3cc74746c7bddbe77359f52",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_college_programming_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "fa22b61a10ae6bbe1b4f36b937b128715d4b9e1952358ccd36554cb19cd52318",
+      "records": 37
+    },
+    {
+      "file": "samples_ceval-valid_computer_architecture_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "9fa18863c969f255e85e6df629edb1a49c3165e099a950cb8d364d52ad52ce93",
+      "records": 21
+    },
+    {
+      "file": "samples_ceval-valid_computer_network_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "aa46b06fbd3d3b7f858ca8be1be52e2edd70a76ca93f38a2051f19a75c5264c5",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_discrete_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "12ae0f9e6691215b2f387e69372d04df1d2576438637077ea82f31131f9cfd70",
+      "records": 16
+    },
+    {
+      "file": "samples_ceval-valid_education_science_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "df3db24094fe244fcd65144b215fd6ed90fe573f4f8750fdcd842e97fbf99014",
+      "records": 29
+    },
+    {
+      "file": "samples_ceval-valid_electrical_engineer_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2cdbd608c9142b7433b162ac723a69d5e2d6d4f30089aa59530a2cbecafe13a0",
+      "records": 37
+    },
+    {
+      "file": "samples_ceval-valid_environmental_impact_assessment_engineer_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "0b7f07e261be2f315aef6415e77a9e1fab367d50f01eafd45b4a18320e6a5b29",
+      "records": 31
+    },
+    {
+      "file": "samples_ceval-valid_fire_engineer_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d3e2bb79e10fa5941027e247d85de3805eac0650f0aff6ce4195cda2fcf43b73",
+      "records": 31
+    },
+    {
+      "file": "samples_ceval-valid_high_school_biology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "5c09bfbccee6dc0705a59d39a03534176e22fdd1c0fb401aa5829a4d6542b219",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_high_school_chemistry_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "aa7a2b8e37f9d6820cba38d481442a2f2fe4d69f1555da17b6ef892f9a4c2db7",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_high_school_chinese_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "822398946d93abff96e100b2f214621d459dfb944ea85aa2106214bba1c49c12",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_high_school_geography_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "213939b1ee74b3a71a55d5859da782bfb0dca98a5429a3209d603f9c7a6a4267",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_high_school_history_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "cb08b4dd23a472f20281a423346859de61945c7e1717aa1ee1542b3a659a39af",
+      "records": 20
+    },
+    {
+      "file": "samples_ceval-valid_high_school_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "14458e0d2ea175a94322099e75be168ceb5d90a2998263e1bb4cf8e7a38412c0",
+      "records": 18
+    },
+    {
+      "file": "samples_ceval-valid_high_school_physics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "35bd175f1f757729f9bffb5123f139c7ed90f8785bc9f0391f7354526304b902",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_high_school_politics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "78d422ccbf9cf4684a592d75b1a315946bda7597e8a2d23a116eeffb8ba61af5",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_ideological_and_moral_cultivation_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "20f6bfd2cf8dfb90810285b9f5ca80cc25ec17facbb71d5475633f0ea9d50227",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_law_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "835f634d54f9b399d3391762120638e47a5fb0e781647b3d8a1f48ad6df6e799",
+      "records": 24
+    },
+    {
+      "file": "samples_ceval-valid_legal_professional_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "ebf0b7302219a4924fb7f4f4af361b4390fdae0f866c915bb3b05d758978c3b0",
+      "records": 23
+    },
+    {
+      "file": "samples_ceval-valid_logic_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "ec1e6a025e98ab8c8c4d8b5229e65150c6439b68ae0fb751e9d1586b5ec5615e",
+      "records": 22
+    },
+    {
+      "file": "samples_ceval-valid_mao_zedong_thought_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "873e52cef874fe9fb85e53b46f1b944339be635e69069b4bc2d873ce686ae541",
+      "records": 24
+    },
+    {
+      "file": "samples_ceval-valid_marxism_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7b34363f381d446ed0d301d1093ad931c62cf2fbed19c5c330fac04496e76af4",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_metrology_engineer_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "9509f34bfb1be6d5a74d99caa87e9a4f733366d1859397e9999cd2814a011a23",
+      "records": 24
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_biology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d34cb5ec75454c4e3905f9518ec0589231a7550d87d88b38e62b6a4b04203aca",
+      "records": 21
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_chemistry_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "979c2c85e506057eb15973db4cb78b777293695dfab8d44c2faff3bd35d15dd9",
+      "records": 20
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_geography_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "e86dcf7e23371a13de813fd0be959bda960f4a31f301b4562124df9eabf7bb42",
+      "records": 12
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_history_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2b7a1a2127cfa245a9f3b90227a9c9ca0d05731b5fc75303649b425d24e58e83",
+      "records": 22
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "1d0b766e0cf0e7cd409566fb5408d1906c0deb03ebe0c27721585330a1592f67",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_physics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d1bbdcee5364d2e4d56285227077d7ab438193cab48348644931bfebb6ef66b8",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_middle_school_politics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "1c6bdf939c254e231a66484ea07c84a38f05f1bacc5fbdaa6619bc545e1483b0",
+      "records": 21
+    },
+    {
+      "file": "samples_ceval-valid_modern_chinese_history_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "8777ac5b787b74db837ae36a12ced1032d44ddc64de8c290ab404aefcad875fd",
+      "records": 23
+    },
+    {
+      "file": "samples_ceval-valid_operating_system_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "686d5c01cff5fd9d634bdb9730358a37ba86938692c0739ec6980017adc066d7",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_physician_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7d7d870062295f3930f6dd4d4f1f4f4f39c244090a8b70f8927cb441b26e048d",
+      "records": 49
+    },
+    {
+      "file": "samples_ceval-valid_plant_protection_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7a6e6d846c0327cca6c2628b636b77eed9c57e1813c184bfcf286b0dfd771530",
+      "records": 22
+    },
+    {
+      "file": "samples_ceval-valid_probability_and_statistics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "da7b831a8983666b53f1ac00dfa11ab626bc0fe74ba8f57c56c256f65b9e76bf",
+      "records": 18
+    },
+    {
+      "file": "samples_ceval-valid_professional_tour_guide_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "595ab2834197b5791e7a9d11d93d606c54fac71935e86061a83d7f22fbb04cc0",
+      "records": 29
+    },
+    {
+      "file": "samples_ceval-valid_sports_science_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "c4a4405fae2a38a81628603e83a464df7714d288be484773072a30ed8595b7a2",
+      "records": 19
+    },
+    {
+      "file": "samples_ceval-valid_tax_accountant_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7568e92a81e988b5ad6d787290aa8a7902ff580df35930fe4586f2aef2d189f2",
+      "records": 49
+    },
+    {
+      "file": "samples_ceval-valid_teacher_qualification_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "e28a27e825d5566f4059257d62a20c9e91a4daa65bf86db3795610adf2d4a423",
+      "records": 44
+    },
+    {
+      "file": "samples_ceval-valid_urban_and_rural_planner_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "0c58e9f41da8f0ac59a14a3f843f16bdd27cf13abae53265f91bd190271974c9",
+      "records": 46
+    },
+    {
+      "file": "samples_ceval-valid_veterinary_medicine_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "b72a88992533e58a50109134191bcc1806840f102068610f1b9386b247b516d7",
+      "records": 23
+    },
+    {
+      "file": "samples_cmmlu_agronomy_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "a48744653756506eafaf234f98acb8314ec00f5808fedf82255abfa1a086df39",
+      "records": 169
+    },
+    {
+      "file": "samples_cmmlu_anatomy_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d1811f23997e77e41f4ff116ea96f22bdb390276ebb729ae65c0ff85b1991f6a",
+      "records": 148
+    },
+    {
+      "file": "samples_cmmlu_ancient_chinese_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "3f5bc88fe624f318f6bc3f5e4340c653832a9898fd7127a1d0b715b3c6ccdd7a",
+      "records": 164
+    },
+    {
+      "file": "samples_cmmlu_arts_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "6ee356dc70e1ba1b628e5b2e7ae45bcf5b26214dd8ca377b761b2e127c515c7c",
+      "records": 160
+    },
+    {
+      "file": "samples_cmmlu_astronomy_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "02853ba358312903cbd24f558f684c3644ed918f28fd20f187bce50421f6d0ec",
+      "records": 165
+    },
+    {
+      "file": "samples_cmmlu_business_ethics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "174ff4e3ee94eca14b878afe4a9822a3984640925b04e8804dd63783b8c2ff00",
+      "records": 209
+    },
+    {
+      "file": "samples_cmmlu_chinese_civil_service_exam_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "9439586064a2f90cbca562d2d6cd4984753c871a1338c1381b1f0a70a92b4e09",
+      "records": 160
+    },
+    {
+      "file": "samples_cmmlu_chinese_driving_rule_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7534152714c350c20655e7e8beadf1f8adc8974270efa852a009724b8e161085",
+      "records": 131
+    },
+    {
+      "file": "samples_cmmlu_chinese_food_culture_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d224f9861ab3f15a7938fe754b721784954381082e39a937185c9f5b3dbee938",
+      "records": 136
+    },
+    {
+      "file": "samples_cmmlu_chinese_foreign_policy_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2abb4e489b614a3d466b32b0559fe669fa032905f57b661d56b3c987f0ab4d73",
+      "records": 107
+    },
+    {
+      "file": "samples_cmmlu_chinese_history_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "ec48f0604c03ce3ac7a6ec7377acae86fc78ecb7b951c510da63b2c1278022c5",
+      "records": 323
+    },
+    {
+      "file": "samples_cmmlu_chinese_literature_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "939d56ad8881b00f613be8cb910f83f83bdba44cefa40fb4a62f504275956594",
+      "records": 204
+    },
+    {
+      "file": "samples_cmmlu_chinese_teacher_qualification_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "230075e75ac365d0f2c1dca6662b80f0c96e70c54460163bdc1c541323aa1d58",
+      "records": 179
+    },
+    {
+      "file": "samples_cmmlu_clinical_knowledge_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "688a714c97699ec446a2f36c405c370012d2b06b64b45d277d575d8f24beba2d",
+      "records": 237
+    },
+    {
+      "file": "samples_cmmlu_college_actuarial_science_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d7c6cd7538aaef751adf624f2a6d6dfd3bcd8c82ba59aed37041d0f0fb5b6736",
+      "records": 106
+    },
+    {
+      "file": "samples_cmmlu_college_education_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "ec8bb08010c74378bba22738910d8078faf1c09dd71f45c24f7b689defb1907d",
+      "records": 107
+    },
+    {
+      "file": "samples_cmmlu_college_engineering_hydrology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "1f1d4be8f594bf9a4c1fe0bccd83ac623101737c094bb42755cb7e9649717281",
+      "records": 106
+    },
+    {
+      "file": "samples_cmmlu_college_law_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "4628e637300429e391a27cbebe82563d67fdcf02c6bbe4e66b19d83d6ad2637e",
+      "records": 108
+    },
+    {
+      "file": "samples_cmmlu_college_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "f04f813e88434b907b20a59800522e5c7c5e40032608d9f8d5260b431a9fe7ab",
+      "records": 105
+    },
+    {
+      "file": "samples_cmmlu_college_medical_statistics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "a64512a3d1d160d6bd63b4c5a3456af4597aaa379c082c426dcf53f08c06bfe2",
+      "records": 106
+    },
+    {
+      "file": "samples_cmmlu_college_medicine_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "18cf7b22f99ecd8635e8ce6ebca55a7e7d13a27e4b222907c7d9c3f47f051004",
+      "records": 273
+    },
+    {
+      "file": "samples_cmmlu_computer_science_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "e555473475820092129e0398e64b7c875b73c73d5019cf9b000f0ed5290ae92d",
+      "records": 204
+    },
+    {
+      "file": "samples_cmmlu_computer_security_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "05efd0be6776a575fe6340e5088a5f7123e77c9c4597d98ff887ae5530b07b9d",
+      "records": 171
+    },
+    {
+      "file": "samples_cmmlu_conceptual_physics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "99e30bbfb24a4325b12081f8291cd3c023618d104f7315bcde13ba9984f41285",
+      "records": 147
+    },
+    {
+      "file": "samples_cmmlu_construction_project_management_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "e84f1b90ca7d5438327f19209f460717c3dccc8270c6e3c70cae67be3b656475",
+      "records": 139
+    },
+    {
+      "file": "samples_cmmlu_economics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "95502c0f57dd8dc11d6d35699653bdca8b0011ae690a251ccf7e86b36afcef91",
+      "records": 159
+    },
+    {
+      "file": "samples_cmmlu_education_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "c5c425ca064486ba494beabc13ebe16131af4fc7b578e28540abc3500325bb8a",
+      "records": 163
+    },
+    {
+      "file": "samples_cmmlu_electrical_engineering_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "92f04b3951833b83f99607a999f2b8bb4fdef43e9836ca41ed0e32cb1a7e3c04",
+      "records": 172
+    },
+    {
+      "file": "samples_cmmlu_elementary_chinese_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "9693c5b3f4c1a28db16c2b6b8f0cfd8d6482a346b176e642b781f9d32f374f05",
+      "records": 252
+    },
+    {
+      "file": "samples_cmmlu_elementary_commonsense_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2305eccf6e61a9cef1320d3843a3f8c05840ff7ac207a9d2c66f7db43d370d31",
+      "records": 198
+    },
+    {
+      "file": "samples_cmmlu_elementary_information_and_technology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "6d7d98520ce5d30bd1089b4d420d210d0c3bb30d201f9d5c2c81defe44c6b890",
+      "records": 238
+    },
+    {
+      "file": "samples_cmmlu_elementary_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2aafec7a728a8436ae42a437622517b6c1f20b05afcd01f47f375f31b9ca5b22",
+      "records": 230
+    },
+    {
+      "file": "samples_cmmlu_ethnology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "52659557a0bfeaecd74850eae677151b3015ed8293070f88c97f4f854db950cd",
+      "records": 135
+    },
+    {
+      "file": "samples_cmmlu_food_science_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "9233bdbf3c58a69b6e73c54ba82aa4809780ce2d155e3e021a1378ebe625a0e7",
+      "records": 143
+    },
+    {
+      "file": "samples_cmmlu_genetics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "52e7006b23201b0b03afcea567f9adeadcc7cdb1a61cee043f9f64084f2b16d7",
+      "records": 176
+    },
+    {
+      "file": "samples_cmmlu_global_facts_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "48cd29223b9ac5fdbccaf08e918fc162bc5de455bfb4b8107091ded8156a3307",
+      "records": 149
+    },
+    {
+      "file": "samples_cmmlu_high_school_biology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2b413faa0a4d73cb995398970730c0d9daca1016f4f87c22ef6ca81379de6d47",
+      "records": 169
+    },
+    {
+      "file": "samples_cmmlu_high_school_chemistry_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "53cdfa24c4736b54d3c2542dea25fdedce2ff356195135986716d455cc9ff139",
+      "records": 132
+    },
+    {
+      "file": "samples_cmmlu_high_school_geography_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "157206f894862c73825447882f47704a8beb14093e1174c1662713bf019f6566",
+      "records": 118
+    },
+    {
+      "file": "samples_cmmlu_high_school_mathematics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "1216c0afc8fe77fa882bbe70c78fb736299f7ff9bfe6f53e69496a0372b6fdf5",
+      "records": 164
+    },
+    {
+      "file": "samples_cmmlu_high_school_physics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "51706958fca464e73e78c74947ba2756024d3f09085ea1afceba3c7ba589a318",
+      "records": 110
+    },
+    {
+      "file": "samples_cmmlu_high_school_politics_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "5ef9fe06a931c3468e5fd8cef084c4faa9ac9d43124a7202a79f93ac1b7a5402",
+      "records": 143
+    },
+    {
+      "file": "samples_cmmlu_human_sexuality_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "41ba1d502491ac451f7ab173a5c7fd5358595efa4b4215fecdaa0a1085823105",
+      "records": 126
+    },
+    {
+      "file": "samples_cmmlu_international_law_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "8a335b9f62cc8f194c237e705f1bf00bb4342383c46b4abbbad7f372b7938c71",
+      "records": 185
+    },
+    {
+      "file": "samples_cmmlu_journalism_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "c619ff436e8fe6b1aa2a823cfc9f8ebb2e4123cfc0b7a4fe8c2f84527e3278f2",
+      "records": 172
+    },
+    {
+      "file": "samples_cmmlu_jurisprudence_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "5647a027060aa0dc8e1b7987dff8ca74b40da071145d515e830e06829fd14fd8",
+      "records": 411
+    },
+    {
+      "file": "samples_cmmlu_legal_and_moral_basis_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "85baacc0d00c82c887217161d1da9a5864d3f50b6ca79575c64c6efa8b084271",
+      "records": 214
+    },
+    {
+      "file": "samples_cmmlu_logical_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "d94cb5dfa56d25bd1e3d100a85052f18f8f15903acbbdcd360a3ca88cdf44730",
+      "records": 123
+    },
+    {
+      "file": "samples_cmmlu_machine_learning_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "ffd48e22c8d569c6785d94c53545a1b98ce920a81e2f136551c1e08e793706d7",
+      "records": 122
+    },
+    {
+      "file": "samples_cmmlu_management_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "45b212214e99c0897efedc6cbe01064968b81cb4bb3f1dc0c5118855d6b622a6",
+      "records": 210
+    },
+    {
+      "file": "samples_cmmlu_marketing_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "76426c46a44c81c487f26c0969c767e0abb337d1aebac3ca2294b247f13f21f3",
+      "records": 180
+    },
+    {
+      "file": "samples_cmmlu_marxist_theory_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "a09ccd401ff86fb125106e3b437d78bcd19b12ca18e76b390de5399893edb949",
+      "records": 189
+    },
+    {
+      "file": "samples_cmmlu_modern_chinese_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "a2814e374cf8bd27806b0a586f64ab5d0c3df5d011666edb5751fd90b9e74a49",
+      "records": 116
+    },
+    {
+      "file": "samples_cmmlu_nutrition_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "065b441a9e49c460eac692229ef5c23d6b57df7e830e9f0766cd4f781862eed9",
+      "records": 145
+    },
+    {
+      "file": "samples_cmmlu_philosophy_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "6274381a3a47461aca598be6f8c05419003f228c3666e3225b6df9b4b3c2abba",
+      "records": 105
+    },
+    {
+      "file": "samples_cmmlu_professional_accounting_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "498d8bc5754daf50fe2ff5c1d0d318049859a6cc0427c02afacbfdf800accd03",
+      "records": 175
+    },
+    {
+      "file": "samples_cmmlu_professional_law_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "7144c5d1ba24e2aa1a83c28f98930083ed3ac7b67ecbfb45ed1190226baad96b",
+      "records": 211
+    },
+    {
+      "file": "samples_cmmlu_professional_medicine_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "6e3fca52eaffc728a9eef02e0c554ea416e37acb76252443b2ef8d33964ec478",
+      "records": 376
+    },
+    {
+      "file": "samples_cmmlu_professional_psychology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "2fb12c7a446b578e6dad034e1d1941e089b70723b1d32d55d5f9af9c3a4e1fda",
+      "records": 232
+    },
+    {
+      "file": "samples_cmmlu_public_relations_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "afa4fe511a178d121cccecd47cd164b992197dbdedf0d3ae34ca95a3c1354289",
+      "records": 174
+    },
+    {
+      "file": "samples_cmmlu_security_study_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "1a25dd7ffb4687de90db699b86be2ef7e5e29a85924c77aa40c8771ce8b862ff",
+      "records": 135
+    },
+    {
+      "file": "samples_cmmlu_sociology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "4559383a324f2adb4f20c1b2c0ebaf33c9a898a34b940bc13b50c462f6cdfec0",
+      "records": 226
+    },
+    {
+      "file": "samples_cmmlu_sports_science_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "46f07610e5efb1a8325ae502e7041547853f9f6c96bca67d18f75906df1a9046",
+      "records": 165
+    },
+    {
+      "file": "samples_cmmlu_traditional_chinese_medicine_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "65ef0a8d350de88f972353560e74cdba46d87f92fe1a7efcfb8ba5782c983b18",
+      "records": 185
+    },
+    {
+      "file": "samples_cmmlu_virology_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "0fbc6098081e9bda5cdd016d71e440d770b1f350c44febf0ff021e18bb1a994f",
+      "records": 169
+    },
+    {
+      "file": "samples_cmmlu_world_history_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "b4f9861c9504889637d0cf0cf99b581ed2e4ddec17ce366bb13697e0c11711fc",
+      "records": 161
+    },
+    {
+      "file": "samples_cmmlu_world_religions_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "82e6b9dc91a3d0a65220bbcef2ac545eb7b30b12dc77d09b7aa38e98c35a93de",
+      "records": 160
+    },
+    {
+      "file": "samples_xcopa_zh_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "8b10ab6cac6dad780b4eccfbc8b3d5cae2d501c9eebe9820dc6a06b88d93353a",
+      "records": 500
+    },
+    {
+      "file": "samples_xwinograd_zh_2026-08-30T00-12-02.015088.jsonl",
+      "sha256": "b734eb9e7a609abedea4f718c307e6921377c3fae25c69a1071f2fd6b930ca5c",
+      "records": 504
+    }
+  ],
+  "tie_sensitivity": [
+    {
+      "task": "ceval-valid",
+      "correct_on_ties": 39,
+      "gold_in_top_tie": 79,
+      "uniform_top_tie_expected_accuracy": 0.2576151560178306,
+      "worst_case_top_tie_accuracy": 0.2303120356612184,
+      "best_case_top_tie_accuracy": 0.2890044576523031
+    },
+    {
+      "task": "cmmlu",
+      "correct_on_ties": 332,
+      "gold_in_top_tie": 713,
+      "uniform_top_tie_expected_accuracy": 0.2548926495136131,
+      "worst_case_top_tie_accuracy": 0.22595406665515455,
+      "best_case_top_tie_accuracy": 0.28751510965290966
+    },
+    {
+      "task": "xcopa_zh",
+      "correct_on_ties": 3,
+      "gold_in_top_tie": 5,
+      "uniform_top_tie_expected_accuracy": 0.577,
+      "worst_case_top_tie_accuracy": 0.572,
+      "best_case_top_tie_accuracy": 0.582
+    },
+    {
+      "task": "xwinograd_zh",
+      "correct_on_ties": 23,
+      "gold_in_top_tie": 45,
+      "uniform_top_tie_expected_accuracy": 0.5942460317460317,
+      "worst_case_top_tie_accuracy": 0.5496031746031746,
+      "best_case_top_tie_accuracy": 0.6388888888888888
+    }
+  ],
+  "uncertainty_notes": [
+    "stored_standard_error is SE, not a seed-level standard deviation or a saved confidence interval.",
+    "Wilson95 was computed in this audit from existing correct/total counts under an item-Bernoulli approximation; it does not include seed, template, numerical, subject-cluster or contamination uncertainty.",
+    "C-Eval and CMMLU stored scores are item-weighted; subject_macro_accuracy is newly computed from the existing per-subject outcomes.",
+    "CMMLU has three repeated doc_hash pairs, yielding 11579 unique hashes across 11582 records."
+  ],
+  "sanitization": "Only aggregate metrics, public repository IDs/revisions, benchmark output basenames and SHA256 hashes. No question text, raw prompts, cache paths, environment dump, config_source paths or credentials copied."
+}
