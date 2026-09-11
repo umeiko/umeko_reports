@@ -25,6 +25,19 @@
   GBS=256，lr 3e-5 cosine，2 epochs=5337 步（1,366,272 行，99.99% 完整 2 轮），终 loss 1.788，
   全程无 NaN；HF 权重 `pilot_sft_8m/hf_ckpt_v2/`（=iter_0005337，本机转换）。
   即 4M-mix-v2 的 8M 数据版，同样带文档间注意力隔离，标准 chat template 评测（无 --plain-prompt）
+- **1M-mix-v2 配方**（本机 8×910B3）：pilot 同款 97.7 万对双向展开 195 万条
+  **+ 清洗后 STEP_FUN 19,644 条（9.1% token 占比，同 seed 选取，是 4M/8M 子集的前缀）**，
+  官方 `--pack --neat-pack` 打包出 93,980 条满 2048 序列，GBS=256，MBS=1，lr 3e-5 cosine，
+  2 epochs=734 步，终 loss 2.167；脚本 `pilot_sft_1m_mix/tune_haidass_translate_1m_mix.sh`，
+  HF 权重 `pilot_sft_1m_mix/hf_ckpt/`（=iter_0000734）。
+  ⚠️ 注意：与 pilot 的差别**不止 STEP_FUN 一个变量**——打包后优化步数只有 734 步
+  （pilot 不打包有 15270 步，同 token 量差 21 倍），该行的偏低成绩不能单独归因于混通用数据
+  （见"读表要点"第 12 条）
+- **1M-mix-nopack 配方**（本机 8×910B3，**干净对照**）：与 pilot **唯一差别是混入清洗后
+  STEP_FUN 19,644 条**（9.1% token 占比）——数据同样不打包逐条喂（1,973,982 条），
+  MBS=16，`--no-pad-to-seq-lengths`，GBS=256，lr 3e-5 cosine，2 epochs=15421 步，
+  优化步数与 pilot（15270）对齐；脚本 `pilot_sft_1m_mix_nopack/tune_1m_mix_nopack.sh`，
+  HF 权重 `pilot_sft_1m_mix_nopack/hf_ckpt/`（=iter_0015421）
 
 ## 总表（按 en→zh BLEU 排序）
 
@@ -44,6 +57,8 @@
 | **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 20.10 | 15.98 | 13.88 | 38.79 |
 | **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 0.14B | 17.18 | 15.22 | 7.34 | 31.92 |
 | **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 0.14B | 16.65 | 13.72 | 14.49 | 39.75 |
+| **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 0.14B | 16.03 | 13.24 | 14.09 | 39.62 |
+| **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** ⚠️优化步数只有 pilot 的 1/21，见配方注 | SFT LLM | 0.14B | 14.86 | 13.07 | 8.79 | 33.65 |
 | Haidass-sft-ckpt168000（通用 SFT 版） | 通用 SFT LLM | 136M | 10.12 | 10.32 | 2.85 | 11.78 |
 
 预测文件：`sft_eval/pred_<模型>_flores_dev.jsonl`（含 src/ref/hyp，可人工抽查）。
@@ -125,6 +140,19 @@ en→zh（10.32），与 BLEU（2.85 vs 10.12）看似矛盾。原因：chrF 只
     只推 en→zh，推不动 zh→en。zh→en 的下一步杠杆大概率不是"再堆数据"，而是
     英文侧数据质量/多样性（或更大底座）。与外部对照：en→zh 23.64 已越过
     NLLB-600M（22.44），距 Qwen3-0.6B（30.94）和 OPUS-MT（30.88）仍有明确差距。
+12. **1M-mix-v2 的偏低成绩是"优化步数"变量污染，不能归因于 STEP_FUN**：该行与 pilot 的差别
+    除了混 9.1% 通用数据，还有打包方式——官方 pack 把 195 万条样本压成 9.4 万条满 2048 序列，
+    优化步数从 pilot 的 15270 步缩到 **734 步（同 token 量少 21 倍梯度更新）**，cosine 日程
+    也等比缩短，模型明显欠训（终 loss 2.167 vs pilot 1.886；输出连贯无崩溃，只是错得多）。
+    4M/8M 规模不受此影响是因为数据量给了足够步数（2666/5337 步）。
+    本条也是对规模梯度解读的警告：1M/4M/8M 三档 v2 的 en→zh（14.86→20.10→23.64）
+    同时混着数据量和优化步数两个变量。
+13. **干净对照（1M-mix-nopack，2026-09-11 评）：1M 规模掺 9.1% 清洗后 STEP_FUN ≈ 无害略损**。
+    与 pilot 唯一差别是混入通用数据（不打包、15421 步对齐），结果 en→zh 16.03（pilot -0.62）、
+    zh→en 14.09（-0.40）、chrF++ 几乎持平（13.24/39.62 vs 13.72/39.75）——**轻微稀释，无崩塌**。
+    与 8M v1 的 zh→en 7.34 崩塌对比，最终实锤：v1 事故的元凶是"未清洗 + 无注意力隔离"，
+    通用数据本身在 9.1% 配比下对翻译能力至多造成 <1 BLEU 的稀释。代价结论：
+    小规模纯翻译目标下可不掺；若希望模型兼顾通用对话，1 BLEU 以内的代价可接受。
 
 ## 未测清单（及原因）
 
