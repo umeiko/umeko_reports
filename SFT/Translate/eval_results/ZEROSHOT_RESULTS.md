@@ -42,6 +42,15 @@
   15270 步、lr 3e-5），唯一差别是**不加载 Haidass 基座，随机初始化冷启动**；
   脚本 `pilot_sft_scratch/tune_scratch.sh`，HF 权重 `pilot_sft_scratch/hf_ckpt/`（=iter_0015270），
   终 loss 3.02（pilot 为 1.886）
+- **8M-trans-v2 配方**（16 卡机 110.120.0.3，**纯翻译对照**）：与 8M-mix-v2 **唯一差别是
+  不含 STEP_FUN 通用数据**——783.7 万对清洗后翻译语料双向展开 1567 万条，同一套官方
+  `--pack --neat-pack` 打包（607,622 条满 2048 序列），GBS=256，lr 3e-5 cosine，
+  2 epochs=4747 步，终 loss 1.789（mix-v2 为 1.788），全程无 NaN；
+  HF 权重 `pilot_sft_8m/hf_ckpt_trans/`（=iter_0004747，本机转换）
+- **去污染审计**（n-gram 口径，脚本 `decontam_audit/ngram_audit.py`）：英文归一化 8-gram、
+  中文归一化 10-gram，命中 FLORES-200 dev 任一 n-gram 即计污染。8M v2 全量训练数据
+  15,830,983 条（翻译 15,673,390 + STEP_FUN 157,593），**污染率 0.0072%（1,147 条：
+  zh 侧 1,097、en 侧 60）**，详见 `decontam_audit/audit_report.json`（含 top50 可溯源样例）
 
 ## 总表（按 en→zh BLEU 排序）
 
@@ -57,6 +66,7 @@
 | minimind-3 | 小聊天 LLM | ~57M | 0.03 | 0.65 | 0.20 | 5.34 |
 | MiniMind2-Small | 小聊天 LLM | 26M | 0.02 | 0.62 | 0.28 | 4.90 |
 | MiniMind2-MoE | 小聊天 LLM | 39M 激活 | 0.01 | 0.39 | 0.03 | 3.96 |
+| **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 23.89 | 17.55 | 14.65 | 40.76 |
 | **Haidass1.5-143M-SFT 8M-mix-v2（8M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 23.64 | 17.21 | 14.35 | 40.13 |
 | **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 20.10 | 15.98 | 13.88 | 38.79 |
 | **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 0.14B | 17.18 | 15.22 | 7.34 | 31.92 |
@@ -165,6 +175,13 @@ en→zh（10.32），与 BLEU（2.85 vs 10.12）看似矛盾。原因：chrF 只
     California"，语法破碎）——**350M token 的 SFT 能教会"翻译的形"，教不会"语言的意"**。
     结论：pilot 的翻译能力大头来自基座预训练的中英语言知识，SFT 数据负责激发和对齐；
     同时说明 SFT 数据本身也非零贡献（scratch 仍有 10.85，远高于 MiniMind 系的 <1）。
+15. **8M-trans-v2（纯翻译对照，2026-09-11 评）：STEP_FUN 去留的终裁**。与 8M-mix-v2 唯一
+    差别是剥离通用数据：en→zh 23.89（mix +0.25）、zh→en 14.65（+0.30），chrF++ 同向
+    （17.55/40.76）——**纯翻译全面微胜**。结合第 13 条（1M 规模 -0.6/-0.4 轻微稀释），
+    最终结论：**9.1% 清洗后通用数据对翻译能力无正贡献，代价在 ±0.3~0.6 BLEU 的噪声-稀释
+    区间**；纯翻译模型应剔除 STEP_FUN，若产品形态需要兼顾通用对话则可容忍。
+    另：8M v2 全量训练数据通过 n-gram 去污染审计，污染率 0.0072%（1,147/15,830,983），
+    FLORES 成绩无评测集泄漏加持（见头部"去污染审计"段）。
 
 ## 未测清单（及原因）
 
