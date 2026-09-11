@@ -38,6 +38,10 @@
   MBS=16，`--no-pad-to-seq-lengths`，GBS=256，lr 3e-5 cosine，2 epochs=15421 步，
   优化步数与 pilot（15270）对齐；脚本 `pilot_sft_1m_mix_nopack/tune_1m_mix_nopack.sh`，
   HF 权重 `pilot_sft_1m_mix_nopack/hf_ckpt/`（=iter_0015421）
+- **1M-scratch 配方**（本机 8×910B3，**随机初始化对照**）：与 pilot 逐参一致（同数据、
+  15270 步、lr 3e-5），唯一差别是**不加载 Haidass 基座，随机初始化冷启动**；
+  脚本 `pilot_sft_scratch/tune_scratch.sh`，HF 权重 `pilot_sft_scratch/hf_ckpt/`（=iter_0015270），
+  终 loss 3.02（pilot 为 1.886）
 
 ## 总表（按 en→zh BLEU 排序）
 
@@ -59,6 +63,7 @@
 | **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 0.14B | 16.65 | 13.72 | 14.49 | 39.75 |
 | **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 0.14B | 16.03 | 13.24 | 14.09 | 39.62 |
 | **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** ⚠️优化步数只有 pilot 的 1/21，见配方注 | SFT LLM | 0.14B | 14.86 | 13.07 | 8.79 | 33.65 |
+| **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 0.14B | 10.85 | 8.74 | 5.15 | 26.86 |
 | Haidass-sft-ckpt168000（通用 SFT 版） | 通用 SFT LLM | 136M | 10.12 | 10.32 | 2.85 | 11.78 |
 
 预测文件：`sft_eval/pred_<模型>_flores_dev.jsonl`（含 src/ref/hyp，可人工抽查）。
@@ -153,6 +158,13 @@ en→zh（10.32），与 BLEU（2.85 vs 10.12）看似矛盾。原因：chrF 只
     与 8M v1 的 zh→en 7.34 崩塌对比，最终实锤：v1 事故的元凶是"未清洗 + 无注意力隔离"，
     通用数据本身在 9.1% 配比下对翻译能力至多造成 <1 BLEU 的稀释。代价结论：
     小规模纯翻译目标下可不掺；若希望模型兼顾通用对话，1 BLEU 以内的代价可接受。
+14. **1M-scratch（随机初始化，2026-09-11 评）：基座有效性直接证据**。与 pilot 唯一差别是
+    不加载 Haidass 预训练权重：en→zh 10.85（pilot -5.8）、zh→en 5.15（**pilot -9.3**）、
+    chrF++ 全面倒退（8.74/26.86 vs 13.72/39.75），终 loss 3.02 vs 1.886。
+    输出形态典型：无照抄无空输出，但语义编造严重（"斯坦福大学医学院"→"University of
+    California"，语法破碎）——**350M token 的 SFT 能教会"翻译的形"，教不会"语言的意"**。
+    结论：pilot 的翻译能力大头来自基座预训练的中英语言知识，SFT 数据负责激发和对齐；
+    同时说明 SFT 数据本身也非零贡献（scratch 仍有 10.85，远高于 MiniMind 系的 <1）。
 
 ## 未测清单（及原因）
 
