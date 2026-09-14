@@ -69,25 +69,25 @@
 
 | 模型 | 类型 | 参数量 | en→zh BLEU | en→zh chrF++ | zh→en BLEU | zh→en chrF++ |
 |---|---|---:|---:|---:|---:|---:|
-| **HY-MT1.5-1.8B** | 专用翻译 LLM | 1.8B | **44.65** | **30.98** | **27.68** | **57.96** |
+| **HY-MT1.5-1.8B** | 专用翻译 LLM | 1800M | **44.65** | **30.98** | **27.68** | **57.96** |
 | OPUS-MT en-zh / zh-en | 专用 seq2seq | 78M×2 | 30.88 | 21.80 | 22.99 | 51.03 |
-| Qwen3-0.6B | 通用指令 LLM | 0.6B | 30.94 | 21.10 | 20.21 | 48.62 |
-| Qwen2.5-0.5B-Instruct | 通用指令 LLM | 0.5B | 28.96 | 19.65 | 18.09 | 45.85 |
+| Qwen3-0.6B | 通用指令 LLM | 600M | 30.94 | 21.10 | 20.21 | 48.62 |
+| Qwen2.5-0.5B-Instruct | 通用指令 LLM | 500M | 28.96 | 19.65 | 18.09 | 45.85 |
 | M2M-100-418M | 专用 seq2seq | 418M | 28.04 | 20.53 | 20.58 | 48.79 |
 | NLLB-200-distilled-600M | 专用 seq2seq | 600M | 22.44 | 16.74 | 25.71 | 52.28 |
 | MiniMind2 | 小聊天 LLM | 104M | 0.14 | 2.10 | 0.85 | 12.00 |
 | minimind-3 | 小聊天 LLM | ~57M | 0.03 | 0.65 | 0.20 | 5.34 |
 | MiniMind2-Small | 小聊天 LLM | 26M | 0.02 | 0.62 | 0.28 | 4.90 |
 | MiniMind2-MoE | 小聊天 LLM | 39M 激活 | 0.01 | 0.39 | 0.03 | 3.96 |
-| **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 23.89 | 17.55 | 14.65 | 40.76 |
-| **Haidass1.5-143M-SFT 8M-mix-v2（8M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 23.64 | 17.21 | 14.35 | 40.13 |
-| **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 20.10 | 15.98 | 13.88 | 38.79 |
-| **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 0.14B | 17.18 | 15.22 | 7.34 | 31.92 |
-| **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 0.14B | 16.65 | 13.72 | 14.49 | 39.75 |
-| **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 0.14B | 16.03 | 13.24 | 14.09 | 39.62 |
-| **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** ⚠️优化步数只有 pilot 的 1/21，见配方注 | SFT LLM | 0.14B | 14.86 | 13.07 | 8.79 | 33.65 |
-| **Haidass1.5-143M-SFT drafter-8M（8M纯翻译, 随机初始化, 无基座, 其余同 8M-trans-v2）** | SFT LLM | 0.14B | 12.04 | 9.43 | 5.47 | 27.31 |
-| **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 0.14B | 10.85 | 8.74 | 5.15 | 26.86 |
+| **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 143M | 23.89 | 17.55 | 14.65 | 40.76 |
+| **Haidass1.5-143M-SFT 8M-mix-v2（8M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 143M | 23.64 | 17.21 | 14.35 | 40.13 |
+| **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 143M | 20.10 | 15.98 | 13.88 | 38.79 |
+| **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 143M | 17.18 | 15.22 | 7.34 | 31.92 |
+| **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 143M | 16.65 | 13.72 | 14.49 | 39.75 |
+| **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 143M | 16.03 | 13.24 | 14.09 | 39.62 |
+| **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** ⚠️优化步数只有 pilot 的 1/21，见配方注 | SFT LLM | 143M | 14.86 | 13.07 | 8.79 | 33.65 |
+| **Haidass1.5-143M-SFT drafter-8M（8M纯翻译, 随机初始化, 无基座, 其余同 8M-trans-v2）** | SFT LLM | 143M | 12.04 | 9.43 | 5.47 | 27.31 |
+| **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 143M | 10.85 | 8.74 | 5.15 | 26.86 |
 | Haidass-sft-ckpt168000（通用 SFT 版） | 通用 SFT LLM | 136M | 10.12 | 10.32 | 2.85 | 11.78 |
 
 预测文件：`sft_eval/pred_<模型>_flores_dev.jsonl`（含 src/ref/hyp，可人工抽查）。
@@ -101,21 +101,21 @@
 
 | 模型 | 类型 | 参数量 | en→zh BLEU | en→zh chrF++ | zh→en BLEU | zh→en chrF++ |
 |---|---|---:|---:|---:|---:|---:|
-| **HY-MT1.5-1.8B** | 专用翻译 LLM | 1.8B | **37.36** | **26.08** | **20.33** | **51.48** |
+| **HY-MT1.5-1.8B** | 专用翻译 LLM | 1800M | **37.36** | **26.08** | **20.33** | **51.48** |
 | OPUS-MT en-zh / zh-en | 专用 seq2seq | 78M×2 | 32.23 | 22.40 | 23.06 | 51.03 |
-| Qwen3-0.6B | 通用指令 LLM | 0.6B | 31.76 | 21.48 | 19.66 | 48.14 |
-| Qwen2.5-0.5B-Instruct | 通用指令 LLM | 0.5B | 29.32 | 19.95 | 18.04 | 46.00 |
+| Qwen3-0.6B | 通用指令 LLM | 600M | 31.76 | 21.48 | 19.66 | 48.14 |
+| Qwen2.5-0.5B-Instruct | 通用指令 LLM | 500M | 29.32 | 19.95 | 18.04 | 46.00 |
 | M2M-100-418M | 专用 seq2seq | 418M | 28.29 | 20.60 | 19.52 | 47.87 |
-| **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 25.06 | 17.72 | 13.68 | 40.02 |
-| **Haidass1.5-143M-SFT 8M-mix-v2（8M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 24.74 | 17.77 | 13.95 | 39.93 |
+| **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 143M | 25.06 | 17.72 | 13.68 | 40.02 |
+| **Haidass1.5-143M-SFT 8M-mix-v2（8M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 143M | 24.74 | 17.77 | 13.95 | 39.93 |
 | NLLB-200-distilled-600M | 专用 seq2seq | 600M | 23.07 | 16.94 | 24.30 | 51.48 |
-| **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 21.75 | 16.44 | 12.75 | 38.18 |
-| **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 0.14B | 16.27 | 14.70 | 7.46 | 32.20 |
-| **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 0.14B | 16.52 | 13.82 | 13.02 | 38.57 |
-| **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 0.14B | 15.78 | 13.72 | 12.19 | 38.25 |
-| **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 14.01 | 12.73 | 9.24 | 33.83 |
-| **Haidass1.5-143M-SFT drafter-8M（8M纯翻译, 随机初始化, 无基座）** | SFT LLM | 0.14B | 10.93 | 9.00 | 5.82 | 26.83 |
-| **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 0.14B | 10.15 | 8.33 | 5.35 | 26.61 |
+| **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 143M | 21.75 | 16.44 | 12.75 | 38.18 |
+| **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 143M | 16.27 | 14.70 | 7.46 | 32.20 |
+| **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 143M | 16.52 | 13.82 | 13.02 | 38.57 |
+| **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 143M | 15.78 | 13.72 | 12.19 | 38.25 |
+| **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 143M | 14.01 | 12.73 | 9.24 | 33.83 |
+| **Haidass1.5-143M-SFT drafter-8M（8M纯翻译, 随机初始化, 无基座）** | SFT LLM | 143M | 10.93 | 9.00 | 5.82 | 26.83 |
+| **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 143M | 10.15 | 8.33 | 5.35 | 26.61 |
 | Haidass-sft-ckpt168000（通用 SFT 版） | 通用 SFT LLM | 136M | 8.77 | 9.84 | 2.81 | 12.30 |
 | MiniMind2 | 小聊天 LLM | 104M | 0.13 | 1.92 | 0.81 | 11.85 |
 | minimind-3 | 小聊天 LLM | ~57M | 0.04 | 0.61 | 0.21 | 5.21 |
