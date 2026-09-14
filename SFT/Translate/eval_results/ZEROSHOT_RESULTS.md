@@ -50,7 +50,14 @@
 - **去污染审计**（n-gram 口径，脚本 `decontam_audit/ngram_audit.py`）：英文归一化 8-gram、
   中文归一化 10-gram，命中 FLORES-200 dev 任一 n-gram 即计污染。8M v2 全量训练数据
   15,830,983 条（翻译 15,673,390 + STEP_FUN 157,593），**污染率 0.0072%（1,147 条：
-  zh 侧 1,097、en 侧 60）**，详见 `decontam_audit/audit_report.json`（含 top50 可溯源样例）
+  zh 侧 1,097、en 侧 60）**，详见 `decontam_audit/audit_report.json`（含 top50 可溯源样例）。
+  另对 **FLORES+ devtest**（1012 句，与 dev 零重叠）复验：1,788/15,830,983 = **0.0113%**
+  （翻译 1,782 + STEP_FUN 6，zh 侧 1,765 多为中文常用短语的 10-gram 误报量级），
+  见 `decontam_audit/audit_floresplus_devtest.json`
+- **FLORES+ devtest 成绩**（1012 句双向，2026-09-14 评；dev split 经逐句比对与
+  FLORES-200 dev 完全相同，故只测 devtest）：**8M-trans-v2 en→zh 25.06/17.72、
+  zh→en 13.68/40.02**——与 dev（23.89/14.65）同一水平线，无 dev 过拟合；
+  预测文件 `pred_haidass-8M-trans_floresplus_devtest.jsonl`
 
 ## 总表（按 en→zh BLEU 排序）
 

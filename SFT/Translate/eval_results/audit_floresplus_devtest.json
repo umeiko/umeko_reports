@@ -1,0 +1,265 @@
+{
+  "eval_ngrams": {
+    "en": 15155,
+    "zh": 26188,
+    "n_en": 8,
+    "n_zh": 10
+  },
+  "train_samples": 15673390,
+  "contaminated": 1782,
+  "contamination_rate": 0.00011369588838151797,
+  "en_side_hits": 24,
+  "zh_side_hits": 1760,
+  "top_examples": [
+    {
+      "coverage": 1.0,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Australian Prime Minister John Howard 澳大利亚总理约翰·霍华德"
+    },
+    {
+      "coverage": 1.0,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Recep Tayyip Erdogan Prime Minister 雷杰普·塔伊普·埃尔多安"
+    },
+    {
+      "coverage": 1.0,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Recep Tayyip Erdoğan 雷杰普·塔伊普·埃尔多安"
+    },
+    {
+      "coverage": 0.4667,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. In 1981, Kilwa Kisiwani was declared a UNESCO World Heritage site. 1981年，基卢瓦基西瓦尼被联合国教科文组织宣布为世界遗"
+    },
+    {
+      "coverage": 0.3571,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Between 1990 and 2005, China's carbon dioxide emissions per unit of GDP were reduced by 46%. 19"
+    },
+    {
+      "coverage": 0.3529,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish president Recep Tayyip Erdoğan called Israel a \"terrorist state\". 土耳其总统雷杰普·塔伊普·埃尔多安称以色列"
+    },
+    {
+      "coverage": 0.3333,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. President of the Palestinian National Authority 巴勒斯坦民族权力机构主席"
+    },
+    {
+      "coverage": 0.3333,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. (Signed) Cristina Fernández 克里斯蒂娜·费尔南德斯(签名)"
+    },
+    {
+      "coverage": 0.3333,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. President of the Palestinian National Authority, 巴勒斯坦民族权力机构主席"
+    },
+    {
+      "coverage": 0.3333,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. His Excellency The Honourable John Howard, M.P., Prime Minister of Australia 16．澳大利亚总理约翰·霍华德先生阁"
+    },
+    {
+      "coverage": 0.3043,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. In the Icelandic sagas, the Norwegian-born Icelander Erik the Red was said to be exiled from Ic"
+    },
+    {
+      "coverage": 0.3,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. The Indian Deputy Prime Minister, Lal Krishna Advani described it as a major development. 土耳其总统"
+    },
+    {
+      "coverage": 0.28,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. As a unique cultural and architectural marvel, Prambanan was declared a World Heritage site in "
+    },
+    {
+      "coverage": 0.2727,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish President Recep Tayyip Erdoğan issued a statement condemning the attack, which took pla"
+    },
+    {
+      "coverage": 0.2727,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish President Recep Tayyip Erdogan with Russian President Vladimir Putin meeting in 2020. 2"
+    },
+    {
+      "coverage": 0.2609,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish President Recep Tayyip Erdoğan said the attacker was believed to be between 12 and 14 y"
+    },
+    {
+      "coverage": 0.25,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. 16. The next meeting of the Assembly will be held from 28 July to 8 August 2003. 16. 大会将于2003年7"
+    },
+    {
+      "coverage": 0.25,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 1981年，基卢瓦基西瓦尼被联合国教科文组织宣布为世界遗产。 In 1981, Kilwa Kisiwani was declared a UNESCO World Heritage site."
+    },
+    {
+      "coverage": 0.25,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. The next GBBC is scheduled for February 16-19, 2018. 下一届GBBC将于2018年2月16日至2月19日举行。"
+    },
+    {
+      "coverage": 0.25,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Gülen was once an ally of Turkish President Recep Tayyip Erdoğan, but the two eventually became"
+    },
+    {
+      "coverage": 0.25,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. She was born in Pittsburgh, Pennsylvania. 她出生在宾夕法尼亚州匹兹堡。"
+    },
+    {
+      "coverage": 0.24,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. And the trend extends beyond the former communist countries to include, for example, Turkish Pr"
+    },
+    {
+      "coverage": 0.2308,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. He then sent a bizarre letter warning Turkish President Recep Tayyip Erdoğan not to “be a tough"
+    },
+    {
+      "coverage": 0.2308,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. The President of Turkey Recep Tayyip Erdoğan offered Alan's father Abdullah citizenship of Turk"
+    },
+    {
+      "coverage": 0.2143,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. But decisions by Turkish President Recep Tayyip Erdogan have also contributed to Turkey’s vulne"
+    },
+    {
+      "coverage": 0.2143,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish President Recep Tayyip Erdoğan declared that the shooting was designed to disrupt the w"
+    },
+    {
+      "coverage": 0.2143,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. But decisions by Turkish President Recep Tayyip Erdoğan have also contributed to Turkey’s vulne"
+    },
+    {
+      "coverage": 0.2,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Queen Elizabeth II does not have a British passport. 英国女王伊丽莎白二世没有护照。"
+    },
+    {
+      "coverage": 0.2,
+      "side": "en",
+      "text": "请将以下简体中文翻译成英文。 奥里萨邦科纳尔克的科纳克太阳神庙被评为联合国教科文组织世界遗产。 The Konark Sun Temple has been declared a UNESCO World Heritage Site."
+    },
+    {
+      "coverage": 0.2,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 土耳其总统雷杰普·塔伊普·埃尔多安称以色列为“恐怖主义国家”。 Turkish president Recep Tayyip Erdoğan called Israel a \"terrorist state\"."
+    },
+    {
+      "coverage": 0.2,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. On that same Memorial Day, Overton met with Texas Governor Rick Perry. 」 同日，奥弗顿会见了德克萨斯州州长里克·佩里。"
+    },
+    {
+      "coverage": 0.2,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Ali Khashan, Minister of Justice of the Palestinian National Authority Ali Khashan，巴勒斯坦民族权力机构司法"
+    },
+    {
+      "coverage": 0.2,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. And then there is US President Donald Trump. 之后还有美国总统唐纳德·特朗普。"
+    },
+    {
+      "coverage": 0.1944,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 根据北欧史诗萨迦记载，红胡子埃里克因为犯谋杀罪而从冰岛流亡至格陵兰。 In the Icelandic sagas, the Norwegian-born Icelander Erik the Red was said to be exiled from Iceland for mansl"
+    },
+    {
+      "coverage": 0.1935,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. On July 26, 2018, US Vice President Pence called on Turkish President Recep Tayyip Erdoğan to r"
+    },
+    {
+      "coverage": 0.1875,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish President Recep Tayyip Erdogan, said that the refugees are not alone steeped in the Med"
+    },
+    {
+      "coverage": 0.1875,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Turkish President Recep Tayyip Erdoğan’s leadership will both complicate matters and give Turke"
+    },
+    {
+      "coverage": 0.1852,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 1990至2005年，中国单位国内生产总值二氧化碳排放强度下降了46％。 Between 1990 and 2005, China's carbon dioxide emissions per unit of GDP were reduced by 46%."
+    },
+    {
+      "coverage": 0.1842,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 作为独特的文化和建筑奇迹，巴兰班南于1991年被联合国教科文组织宣布为世界遗产。 As a unique cultural and architectural marvel, Prambanan was declared a World Heritage site in 1991 by U"
+    },
+    {
+      "coverage": 0.1818,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. And in January 2017, Turkish President Recep Tayyip Erdoğan praised Trump for berating a CNN re"
+    },
+    {
+      "coverage": 0.1818,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 土耳其总统雷杰普·塔伊普·埃尔多安曾提倡将其作为酒的主要替代品。 The Indian Deputy Prime Minister, Lal Krishna Advani described it as a major development."
+    },
+    {
+      "coverage": 0.1765,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. A political adviser to Turkish President Recep Tayyip Erdogan, Yasin Aktay, said Sunday that “t"
+    },
+    {
+      "coverage": 0.175,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. Indeed, his intervention was a strategic blunder, because it embroiled him in a conflict with T"
+    },
+    {
+      "coverage": 0.1714,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 土耳其总统雷杰普·塔伊普·埃尔多安发表声明，谴责在穆斯林斋月发动袭击。 Turkish President Recep Tayyip Erdoğan issued a statement condemning the attack, which took place during the "
+    },
+    {
+      "coverage": 0.1714,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 2020年，土耳其总统雷杰普·塔伊普·埃尔多安与俄罗斯总统弗拉基米尔·普京會晤 Turkish President Recep Tayyip Erdogan with Russian President Vladimir Putin meeting in 2020."
+    },
+    {
+      "coverage": 0.1667,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. He also said he has been banned for life from returning to Turkey but would like to write to Tu"
+    },
+    {
+      "coverage": 0.1667,
+      "side": "zh",
+      "text": "请将以下简体中文翻译成英文。 土耳其总统雷杰普·塔伊普·埃尔多安表示，经过认定袭击者的年龄在12至14岁之间。 Turkish President Recep Tayyip Erdoğan said the attacker was believed to be between 12 and 14 years old."
+    },
+    {
+      "coverage": 0.1667,
+      "side": "en",
+      "text": "请将以下简体中文翻译成英文。 如果它离你的床很远的话，你不能不离开床才能把它关上。 If it is far from your bed, you will have to get out of bed to turn it off."
+    },
+    {
+      "coverage": 0.1667,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. (i) The high-level segment will be held from 29 June to 1 July 2005; ㈠ 高级别部分将于2005年6月29日至7月1日举行"
+    },
+    {
+      "coverage": 0.1667,
+      "side": "zh",
+      "text": "Translate the following text from English to Simplified Chinese. The eighth session will be held from 24 September to 5 October 2001. 第八届会议将于2001年9月24日至10月5日举行。"
+    }
+  ]
+}
