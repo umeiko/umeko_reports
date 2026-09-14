@@ -25,9 +25,10 @@ LANG_CODE = {
 }
 
 
-def load_pairs():
-    en = [x.rstrip("\n") for x in open(f"{EVAL_DIR}/eng_Latn.dev", encoding="utf-8")]
-    zh = [x.rstrip("\n") for x in open(f"{EVAL_DIR}/zho_Hans.dev", encoding="utf-8")]
+def load_pairs(eval_dir=None):
+    d = eval_dir or EVAL_DIR
+    en = [x.rstrip("\n") for x in open(f"{d}/eng_Latn.dev", encoding="utf-8")]
+    zh = [x.rstrip("\n") for x in open(f"{d}/zho_Hans.dev", encoding="utf-8")]
     assert len(en) == len(zh)
     return en, zh
 
@@ -58,13 +59,15 @@ def main():
     ap.add_argument("--batch-size", type=int, default=32)
     ap.add_argument("--max-new", type=int, default=512)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--eval-dir", default=None,
+                    help="覆盖 EVAL_DIR(目录内需有 eng_Latn.dev 和 zho_Hans.dev)")
     args = ap.parse_args()
 
     tok = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForSeq2SeqLM.from_pretrained(
         args.model, dtype=torch.bfloat16, device_map="npu:0").eval()
 
-    en, zh = load_pairs()
+    en, zh = load_pairs(args.eval_dir)
     n = args.limit or len(en)
     en, zh = en[:n], zh[:n]
 

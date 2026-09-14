@@ -20,9 +20,10 @@ INS_EN2ZH = "Translate the following text from English to Simplified Chinese."
 INS_ZH2EN = "请将以下简体中文翻译成英文。"
 
 
-def load_pairs():
-    en = [x.rstrip("\n") for x in open(f"{EVAL_DIR}/eng_Latn.dev", encoding="utf-8")]
-    zh = [x.rstrip("\n") for x in open(f"{EVAL_DIR}/zho_Hans.dev", encoding="utf-8")]
+def load_pairs(eval_dir=None):
+    d = eval_dir or EVAL_DIR
+    en = [x.rstrip("\n") for x in open(f"{d}/eng_Latn.dev", encoding="utf-8")]
+    zh = [x.rstrip("\n") for x in open(f"{d}/zho_Hans.dev", encoding="utf-8")]
     assert len(en) == len(zh)
     return en, zh
 
@@ -108,6 +109,8 @@ def main():
                     help="用 HY-MT 官方翻译模板(中文/英语), 而非我们的训练指令")
     ap.add_argument("--plain-prompt", action="store_true",
                     help="绕过 chat template, 用无 think 块的裸 im_start 格式(远端 8M 训练格式)")
+    ap.add_argument("--eval-dir", default=None,
+                    help="覆盖 EVAL_DIR(目录内需有 eng_Latn.dev 和 zho_Hans.dev)")
     args = ap.parse_args()
 
     trc = args.trust_remote_code
@@ -116,7 +119,7 @@ def main():
         args.model, dtype=torch.bfloat16, device_map="npu:0",
         trust_remote_code=trc).eval()
 
-    en, zh = load_pairs()
+    en, zh = load_pairs(args.eval_dir)
     n = args.limit or len(en)
     en, zh = en[:n], zh[:n]
 

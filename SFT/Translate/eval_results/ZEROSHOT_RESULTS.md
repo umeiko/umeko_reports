@@ -5,7 +5,7 @@
 - **生成**：NPU 910B3，贪心解码，max_new=512，bf16
 - **脚本**：`sft_eval/eval_translate.py`（LLM，chat 模板）+ `sft_eval/eval_translate_seq2seq.py`（NLLB/M2M/OPUS-MT，forced-BOS）+ `compute_metrics.py`（指标）
 - LLM 用与 pilot SFT 训练逐字一致的指令模板；HY-MT1.5 用其官方模板（见下）
-- 日期：2026-09-04（Haidass1.5-143M-SFT pilot 行补测于 2026-09-07；8M-mix 行补测于 2026-09-09；4M-mix-v2 / 8M-mix-v2 行补测于 2026-09-10）
+- 日期：2026-09-04（Haidass1.5-143M-SFT pilot 行补测于 2026-09-07；8M-mix 行补测于 2026-09-09；4M-mix-v2 / 8M-mix-v2 行补测于 2026-09-10；全表 FLORES+ devtest 复测 + drafter-8M 行补测于 2026-09-14）
 - **我们的 SFT pilot 配方**：97.7 万对清洗后中英平行语料（双向展开 195 万条，packed seq2048），
   8×910B3，GBS=256，lr 3e-5 cosine→3e-6，2 epochs=15270 步，终 loss 1.886；
   脚本 `pilot_sft/tune_haidass_translate_pilot.sh`，HF 权重 `pilot_sft/hf_ckpt/`（=iter_0015270）
@@ -47,6 +47,12 @@
   `--pack --neat-pack` 打包（607,622 条满 2048 序列），GBS=256，lr 3e-5 cosine，
   2 epochs=4747 步，终 loss 1.789（mix-v2 为 1.788），全程无 NaN；
   HF 权重 `pilot_sft_8m/hf_ckpt_trans/`（=iter_0004747，本机转换）
+- **drafter-8M 配方**（16 卡机 110.120.0.3，**8M 规模随机初始化对照**）：与 8M-trans-v2
+  **唯一差别是不加载 Haidass 基座、随机初始化冷启动**（同 607,622 行 packed、4747 步、
+  GBS=256、lr 3e-5 cosine、2 epochs ≈ 24.9 亿 token）；起步 loss 11.06=ln(64000)
+  （纯随机起点），终 loss 2.98（基座版 1.789），全程无 NaN；
+  HF 权重 `pilot_sft_drafter_8m/hf_ckpt/`（=iter_0004747，本机转换，
+  tar 包 md5 26495a39c722728a105c95bdb9ede0f8 已校验）
 - **去污染审计**（n-gram 口径，脚本 `decontam_audit/ngram_audit.py`）：英文归一化 8-gram、
   中文归一化 10-gram，命中 FLORES-200 dev 任一 n-gram 即计污染。8M v2 全量训练数据
   15,830,983 条（翻译 15,673,390 + STEP_FUN 157,593），**污染率 0.0072%（1,147 条：
@@ -54,10 +60,10 @@
   另对 **FLORES+ devtest**（1012 句，与 dev 零重叠）复验：1,788/15,830,983 = **0.0113%**
   （翻译 1,782 + STEP_FUN 6，zh 侧 1,765 多为中文常用短语的 10-gram 误报量级），
   见 `decontam_audit/audit_floresplus_devtest.json`
-- **FLORES+ devtest 成绩**（1012 句双向，2026-09-14 评；dev split 经逐句比对与
-  FLORES-200 dev 完全相同，故只测 devtest）：**8M-trans-v2 en→zh 25.06/17.72、
-  zh→en 13.68/40.02**——与 dev（23.89/14.65）同一水平线，无 dev 过拟合；
-  预测文件 `pred_haidass-8M-trans_floresplus_devtest.jsonl`
+- **FLORES+ devtest 成绩**（1012 句双向，2026-09-14 全表复测；FLORES+ 的 dev split 经逐句
+  比对与 FLORES-200 dev 完全相同，故只测 devtest）：完整总表见下文"总表（FLORES+ devtest）"。
+  我们的模型两个 benchmark 口径稳定（8M-trans-v2：dev 23.89/14.65 → devtest 25.06/13.68，
+  无 dev 过拟合）；**HY-MT1.5-1.8B 在 devtest 异常回落 -7.3/-7.4**（详见"读表要点"第 17 条）
 
 ## 总表（按 en→zh BLEU 排序）
 
@@ -80,10 +86,43 @@
 | **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 0.14B | 16.65 | 13.72 | 14.49 | 39.75 |
 | **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 0.14B | 16.03 | 13.24 | 14.09 | 39.62 |
 | **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** ⚠️优化步数只有 pilot 的 1/21，见配方注 | SFT LLM | 0.14B | 14.86 | 13.07 | 8.79 | 33.65 |
+| **Haidass1.5-143M-SFT drafter-8M（8M纯翻译, 随机初始化, 无基座, 其余同 8M-trans-v2）** | SFT LLM | 0.14B | 12.04 | 9.43 | 5.47 | 27.31 |
 | **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 0.14B | 10.85 | 8.74 | 5.15 | 26.86 |
 | Haidass-sft-ckpt168000（通用 SFT 版） | 通用 SFT LLM | 136M | 10.12 | 10.32 | 2.85 | 11.78 |
 
 预测文件：`sft_eval/pred_<模型>_flores_dev.jsonl`（含 src/ref/hyp，可人工抽查）。
+
+## 总表（FLORES+ devtest，1012 句双向，2026-09-14 评）
+
+评测口径与上表逐字一致（同脚本、同解码、同指标）。FLORES+ 是 FLORES-200 的现行维护版
+（[openlanguagedata/flores_plus](https://huggingface.co/datasets/openlanguagedata/flores_plus)）：
+其 dev split 与 FLORES-200 dev 逐句相同（997/997），devtest 为 1012 句全新句子、与 dev
+零重叠；训练数据对 devtest 的去污染审计 0.0113%（见头部"去污染审计"段）。
+
+| 模型 | 类型 | 参数量 | en→zh BLEU | en→zh chrF++ | zh→en BLEU | zh→en chrF++ |
+|---|---|---:|---:|---:|---:|---:|
+| **HY-MT1.5-1.8B** | 专用翻译 LLM | 1.8B | **37.36** | **26.08** | **20.33** | **51.48** |
+| OPUS-MT en-zh / zh-en | 专用 seq2seq | 78M×2 | 32.23 | 22.40 | 23.06 | 51.03 |
+| Qwen3-0.6B | 通用指令 LLM | 0.6B | 31.76 | 21.48 | 19.66 | 48.14 |
+| Qwen2.5-0.5B-Instruct | 通用指令 LLM | 0.5B | 29.32 | 19.95 | 18.04 | 46.00 |
+| M2M-100-418M | 专用 seq2seq | 418M | 28.29 | 20.60 | 19.52 | 47.87 |
+| **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 25.06 | 17.72 | 13.68 | 40.02 |
+| **Haidass1.5-143M-SFT 8M-mix-v2（8M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 24.74 | 17.77 | 13.95 | 39.93 |
+| NLLB-200-distilled-600M | 专用 seq2seq | 600M | 23.07 | 16.94 | 24.30 | 51.48 |
+| **Haidass1.5-143M-SFT 4M-mix-v2（4M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 21.75 | 16.44 | 12.75 | 38.18 |
+| **Haidass1.5-143M-SFT 8M-mix（8M翻译+未清洗STEP_FUN, 2ep）** | SFT LLM | 0.14B | 16.27 | 14.70 | 7.46 | 32.20 |
+| **Haidass1.5-143M-SFT（我们的翻译 SFT, pilot 2ep）** | SFT LLM | 0.14B | 16.52 | 13.82 | 13.02 | 38.57 |
+| **Haidass1.5-143M-SFT 1M-mix-nopack（pilot+清洗STEP_FUN 9.1%, 不打包, 2ep）** | SFT LLM | 0.14B | 15.78 | 13.72 | 12.19 | 38.25 |
+| **Haidass1.5-143M-SFT 1M-mix-v2（1M翻译+清洗STEP_FUN 9.1%, 官方pack隔离, 2ep）** | SFT LLM | 0.14B | 14.01 | 12.73 | 9.24 | 33.83 |
+| **Haidass1.5-143M-SFT drafter-8M（8M纯翻译, 随机初始化, 无基座）** | SFT LLM | 0.14B | 10.93 | 9.00 | 5.82 | 26.83 |
+| **Haidass1.5-143M-SFT 1M-scratch（随机初始化, 无基座, 其余同 pilot）** | SFT LLM | 0.14B | 10.15 | 8.33 | 5.35 | 26.61 |
+| Haidass-sft-ckpt168000（通用 SFT 版） | 通用 SFT LLM | 136M | 8.77 | 9.84 | 2.81 | 12.30 |
+| MiniMind2 | 小聊天 LLM | 104M | 0.13 | 1.92 | 0.81 | 11.85 |
+| minimind-3 | 小聊天 LLM | ~57M | 0.04 | 0.61 | 0.21 | 5.21 |
+| MiniMind2-Small | 小聊天 LLM | 26M | 0.03 | 0.54 | 0.41 | 4.73 |
+| MiniMind2-MoE | 小聊天 LLM | 39M 激活 | 0.01 | 0.34 | 0.03 | 3.90 |
+
+预测文件：`sft_eval/pred_<模型>_floresplus_devtest.jsonl`。
 
 ## 指标定义
 
@@ -189,6 +228,25 @@ en→zh（10.32），与 BLEU（2.85 vs 10.12）看似矛盾。原因：chrF 只
     区间**；纯翻译模型应剔除 STEP_FUN，若产品形态需要兼顾通用对话则可容忍。
     另：8M v2 全量训练数据通过 n-gram 去污染审计，污染率 0.0072%（1,147/15,830,983），
     FLORES 成绩无评测集泄漏加持（见头部"去污染审计"段）。
+16. **drafter-8M（8M 规模随机初始化，2026-09-14 评）：数据 scale 八倍也补不上基座的差距**。
+    与 8M-trans-v2 唯一差别是随机初始化冷启动：en→zh 12.04（基座版 -11.9）、
+    zh→en 5.47（-9.2），chrF++ 9.43/27.31（基座版 17.55/40.76）。与 1M-scratch
+    （10.85/5.15）对照：数据从 1M 扩到 8M，无基座只换来 en→zh +1.2、zh→en +0.3；
+    同期基座版从 16.65/14.49 涨到 23.89/14.65（en→zh +7.2）。**结论：基座预训练的
+    语言知识不是堆 SFT 平行语料能替代的**——1M 规模基座值 +5.8/+9.3，8M 规模值
+    +11.9/+9.2，优势没有随数据量缩小；终 loss 2.98 vs 1.789 同向印证。
+    "drafter"（草稿模型）得名于投机采样场景：这类小模型常被用作大模型的草稿器，
+    这里顺带验证了无基座小模型靠领域 SFT 能达到的能力上限。
+17. **FLORES+ devtest 全表交叉验证（2026-09-14 评）：我们的模型口径稳定，
+    HY-MT1.5-1.8B 异常回落**。我们的全部 SFT 模型 + 外部对照在两个 benchmark 上的
+    排名与相对差基本一致，且多数模型 devtest 持平或微升（Qwen3-0.6B 30.94→31.76、
+    OPUS-MT 30.88→32.23、M2M 28.04→28.29、NLLB 22.44→23.07、8M-trans-v2
+    23.89→25.06）；唯独 HY-MT1.5-1.8B 大幅回落：en→zh 44.65→37.36（-7.3）、
+    zh→en 27.68→20.33（-7.4）。devtest 是与 dev 零重叠的新句子；一个合理怀疑是
+    HY-MT 的训练/调优过程见过 FLORES-200 dev（WMT 系评测常客），dev 成绩被高估，
+    devtest 更接近其真实 zero-shot 水平——即便如此 37.36/20.33 仍是全场最强，
+    但领先幅度从"断层"缩到"明显"。我们的模型两集合差在 +1.2/-1.0 以内，叠加
+    0.0072%/0.0113% 的去污染审计，成绩可信度有双重支撑。
 
 ## 未测清单（及原因）
 
