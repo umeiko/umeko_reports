@@ -5,7 +5,8 @@
 - **生成**：NPU 910B3，贪心解码，max_new=512，bf16
 - **脚本**：`sft_eval/eval_translate.py`（LLM，chat 模板）+ `sft_eval/eval_translate_seq2seq.py`（NLLB/M2M/OPUS-MT，forced-BOS）+ `compute_metrics.py`（指标）
 - LLM 用与 pilot SFT 训练逐字一致的指令模板；HY-MT1.5 用其官方模板（见下）
-- 日期：2026-09-04（Haidass1.5-143M-SFT pilot 行补测于 2026-09-07；8M-mix 行补测于 2026-09-09；4M-mix-v2 / 8M-mix-v2 行补测于 2026-09-10；全表 FLORES+ devtest 复测 + drafter-8M 行补测于 2026-09-14）
+- 日期：2026-09-04（Haidass1.5-143M-SFT pilot 行补测于 2026-09-07；8M-mix 行补测于 2026-09-09；4M-mix-v2 / 8M-mix-v2 行补测于 2026-09-10；全表 FLORES+ devtest 复测 + drafter-8M 行补测于 2026-09-14；zh→en 过长生成诊断补充于 2026-09-15）
+- **公开发布**：8M-trans-v2 已发布为 [DALabCommunity/Haidass-Translate-143M](https://huggingface.co/DALabCommunity/Haidass-Translate-143M)；在线 demo：[umeiko/haidass-translate-app](https://huggingface.co/spaces/umeiko/haidass-translate-app)（Gradio，贪心+循环惩罚解码）；评测资产（逐句预测、审计报告、脚本）镜像仓库：[umeiko/Haidass-Translate-143M-eval](https://huggingface.co/datasets/umeiko/Haidass-Translate-143M-eval)
 - **我们的 SFT pilot 配方**：97.7 万对清洗后中英平行语料（双向展开 195 万条，packed seq2048），
   8×910B3，GBS=256，lr 3e-5 cosine→3e-6，2 epochs=15270 步，终 loss 1.886；
   脚本 `pilot_sft/tune_haidass_translate_pilot.sh`，HF 权重 `pilot_sft/hf_ckpt/`（=iter_0015270）
@@ -70,8 +71,9 @@
 | 模型 | 类型 | 参数量 | en→zh BLEU | en→zh chrF++ | zh→en BLEU | zh→en chrF++ |
 |---|---|---:|---:|---:|---:|---:|
 | **HY-MT1.5-1.8B** | 专用翻译 LLM | 1800M | **44.65** | **30.98** | **27.68** | **57.96** |
-| OPUS-MT en-zh / zh-en | 专用 seq2seq | 78M×2 | 30.88 | 21.80 | 22.99 | 51.03 |
 | Qwen3-0.6B | 通用指令 LLM | 600M | 30.94 | 21.10 | 20.21 | 48.62 |
+| OPUS-MT en-zh | 专用 seq2seq | 78M | 30.88 | 21.80 | - | - |
+| OPUS-MT zh-en | 专用 seq2seq | 78M | - | - | 22.99 | 51.03 |
 | Qwen2.5-0.5B-Instruct | 通用指令 LLM | 500M | 28.96 | 19.65 | 18.09 | 45.85 |
 | M2M-100-418M | 专用 seq2seq | 418M | 28.04 | 20.53 | 20.58 | 48.79 |
 | NLLB-200-distilled-600M | 专用 seq2seq | 600M | 22.44 | 16.74 | 25.71 | 52.28 |
@@ -102,8 +104,9 @@
 | 模型 | 类型 | 参数量 | en→zh BLEU | en→zh chrF++ | zh→en BLEU | zh→en chrF++ |
 |---|---|---:|---:|---:|---:|---:|
 | **HY-MT1.5-1.8B** | 专用翻译 LLM | 1800M | **37.36** | **26.08** | **20.33** | **51.48** |
-| OPUS-MT en-zh / zh-en | 专用 seq2seq | 78M×2 | 32.23 | 22.40 | 23.06 | 51.03 |
+| OPUS-MT en-zh | 专用 seq2seq | 78M | 32.23 | 22.40 | - | - |
 | Qwen3-0.6B | 通用指令 LLM | 600M | 31.76 | 21.48 | 19.66 | 48.14 |
+| OPUS-MT zh-en | 专用 seq2seq | 78M | - | - | 23.06 | 51.03 |
 | Qwen2.5-0.5B-Instruct | 通用指令 LLM | 500M | 29.32 | 19.95 | 18.04 | 46.00 |
 | M2M-100-418M | 专用 seq2seq | 418M | 28.29 | 20.60 | 19.52 | 47.87 |
 | **Haidass1.5-143M-SFT 8M-trans-v2（8M纯翻译, 官方pack隔离, 2ep）** | SFT LLM | 143M | 25.06 | 17.72 | 13.68 | 40.02 |
@@ -158,6 +161,7 @@ en→zh（10.32），与 BLEU（2.85 vs 10.12）看似矛盾。原因：chrF 只
    早前用我们通用指令测的 zh→en 只有 6.28，是它把中文当中文处理导致的口径事故，已作废。
 2. **Qwen3-0.6B zero-shot 已打平老牌科班 NLLB/M2M**——通用指令模型的时代确实来了。
 3. **OPUS-MT 78M 都有 30.88**：中英方向"数据对口"比"模型大"重要——143M 的故事成立。
+   OPUS-MT 是两个独立单向模型（en-zh / zh-en 各 78M），总表已拆为两行，不服务的方向记 "-"。
 4. **MiniMind 系全军覆没**（BLEU<1）：做过聊天 SFT 但没训过翻译的小模型，
    zero-shot 翻译约等于零（复读原文/循环/跑偏）。
 5. chrF++ 中英文侧量纲不同（中文按字符计分），只在同方向内横比。
@@ -237,13 +241,41 @@ en→zh（10.32），与 BLEU（2.85 vs 10.12）看似矛盾。原因：chrF 只
     +11.9/+9.2，优势没有随数据量缩小；终 loss 2.98 vs 1.789 同向印证。
     "drafter"（草稿模型）得名于投机采样场景：这类小模型常被用作大模型的草稿器，
     这里顺带验证了无基座小模型靠领域 SFT 能达到的能力上限。
-17. **FLORES+ devtest 全表交叉验证（2026-09-14 评）**。全部 20 行模型在两个 benchmark
+17. **FLORES+ devtest 全表交叉验证（2026-09-14 评）**。全部 20 个模型在两个 benchmark
     上的实测成绩如实并列于总表，逐句预测文件公开可复核。我们的全部 SFT 模型两集合差
     在 +1.2/-1.0 以内（如 8M-trans-v2：dev 23.89/14.65 → devtest 25.06/13.68），
     叠加 0.0072%/0.0113% 的去污染审计，成绩口径稳定。外部对照模型中，Qwen3-0.6B /
     OPUS-MT / M2M-100 / NLLB 在 devtest 持平或微升（+0.3~+1.4），HY-MT1.5-1.8B
     低 7.3/7.4 分（37.36/20.33 仍为全场最高）；各模型两集合差异的原因不在本报告
     推测范围内，所有测量值以预测文件为准，读者可用 sacrebleu 自行复算。
+
+## zh→en 过长生成（"停不下来"）诊断（2026-09-15）
+
+**现象**：中译英输出偶尔停不下来。对 8M-trans-v2 的 FLORES-200 dev 预测逐句统计：
+
+| 方向 | 过长（>1.6×ref） | 疑似重复循环 | ≥3 句输出 |
+|---|---:|---:|---:|
+| en→zh | 2.4% | 1.5% | 0.2% |
+| zh→en | 1.2% | 2.2% | 0.5% |
+
+分布内单句绝大多数正常收尾，问题集中在少数坏例，且 zh→en 的重复率略高于 en→zh。
+
+**坏例形态高度一致：重复循环**。zh→en 偏差最大的样本全是
+"of the office of the office of…"、"the first site of the first site of…" 式死循环，
+触发句清一色是**生僻实体密集**的中文源句（希腊记者音译名、萨拉斯瓦蒂河/哈拉帕、
+连续美国州名）。机制链条：模型遇到不会翻的专名时概率分布摊平，贪心解码下重复
+n-gram 自增强成吸引子；而 `<|im_end|>` 在训练数据里只出现在干净完整的译文末尾，
+循环中的内部状态永远够不到"该结束"的样子，EOS 概率上不了位。
+
+**为什么 zh→en 更易发**：① 基座中文偏科，英文生成能力本身弱（zh→en 平台期 14.4
+vs en→zh 23.89）；② 生僻实体在 zh→en 是生成端难点（须拼出罕见英文拼写），在
+en→zh 只是识别端难点（中文音译宽容）；③ 英文译文 token 更长，循环更易扎根。
+
+**对策与边界**：推理端 repetition_penalty + no_repeat_ngram（demo 已配：
+`generation_config.json` 含 repetition_penalty 1.1；Space 演示另加 no_repeat_ngram 3），
+beam search 待对比测试；数据端计划掺入专名/音译密集难样本（真实语料过滤为主 +
+名称库约束合成为辅，配实体密集小测试集验证"卡住率"），目标是教会"尽力音译也要
+完整收尾"的行为，而非覆盖所有名字。该问题是能力与解码层面的，堆训练 epoch 不解决。
 
 ## 未测清单（及原因）
 
